@@ -5,6 +5,7 @@ import sys
 from pathlib import Path
 
 import bpy
+from mathutils import Matrix, Vector
 
 
 def parse_args(argv):
@@ -281,28 +282,258 @@ def add_roof(dims, material, collection):
     return link_mesh_object("gable_roof", verts, faces, material, collection)
 
 
-def resolve_output_path(out_dir, relative_blend_path):
-    out_root = Path(out_dir).resolve()
-    blend_path = (out_root / relative_blend_path).resolve()
+def resolve_child_path(out_root, relative_path, label):
+    if not isinstance(relative_path, str) or not relative_path.strip():
+        raise ValueError(f"{label} must be a non-empty relative path.")
+    path = Path(relative_path)
+    if path.is_absolute():
+        raise ValueError(f"{label} must not be an absolute path.")
+    if ".." in path.parts:
+        raise ValueError(f"{label} must not contain '..' path segments.")
+
+    resolved_path = (out_root / path).resolve()
     try:
-        blend_path.relative_to(out_root)
+        resolved_path.relative_to(out_root)
     except ValueError as exc:
-        raise ValueError("Configured blend output path escapes the output directory.") from exc
-    return out_root, blend_path
+        raise ValueError(f"{label} escapes the output directory.") from exc
+    return resolved_path
+
+
+def resolve_output_paths(out_dir, output_config):
+    out_root = Path(out_dir).resolve()
+    blend_path = resolve_child_path(out_root, output_config["blend"], "output.blend")
+    render_paths = {
+        view: resolve_child_path(out_root, output_config["renders"][view], f"output.renders.{view}")
+        for view in ("front", "back", "left", "right")
+    }
+    return out_root, blend_path, render_paths
+
+
+def look_at(obj, target):
+    forward = (Vector(target) - obj.location).normalized()
+    world_up = Vector((0.0, 0.0, 1.0))
+    right = forward.cross(world_up).normalized()
+    up = right.cross(forward).normalized()
+    rotation_matrix = Matrix((right, up, -forward)).transposed()
+    obj.rotation_euler = rotation_matrix.to_euler()
+
+
+def move_object_to_collection(obj, collection):
+    for source_collection in list(obj.users_collection):
+        source_collection.objects.unlink(obj)
+    collection.objects.link(obj)
+
+
+def add_camera(name, location, target, orthographic_scale, collection):
+    camera_data = bpy.data.cameras.new(f"{name}_data")
+    camera_data.type = "ORTHO"
+    camera_data.ortho_scale = orthographic_scale
+    camera = bpy.data.objects.new(name, camera_data)
+    camera.location = location
+    collection.objects.link(camera)
+    look_at(camera, target)
+    return camera
+
+
+def mesh_objects_from_collections(collection_names):
+    mesh_objects = []
+    for collection_name in collection_names:
+        collection = bpy.data.collections.get(collection_name)
+        if collection is None:
+            raise ValueError(f"Collection ontbreekt voor camerakadrering: {collection_name}")
+        mesh_objects.extend(obj for obj in collection.objects if obj.type == "MESH")
+
+    if not mesh_objects:
+        raise ValueError("Geen mesh-objecten gevonden voor camerakadrering.")
+    return mesh_objects
+
+
+def calculate_world_bounds(mesh_objects):
+    bpy.context.view_layer.update()
+    corners = [
+        obj.matrix_world @ Vector(corner)
+        for obj in mesh_objects
+        for corner in obj.bound_box
+    ]
+
+    min_x = min(corner.x for corner in corners)
+    max_x = max(corner.x for corner in corners)
+    min_y = min(corner.y for corner in corners)
+    max_y = max(corner.y for corner in corners)
+    min_z = min(corner.z for corner in corners)
+    max_z = max(corner.z for corner in corners)
+
+    return {
+        "min_x": min_x,
+        "max_x": max_x,
+        "min_y": min_y,
+        "max_y": max_y,
+        "min_z": min_z,
+        "max_z": max_z,
+        "center": (
+            (min_x + max_x) / 2.0,
+            (min_y + max_y) / 2.0,
+            (min_z + max_z) / 2.0,
+        ),
+    }
+
+
+def orthographic_scale(horizontal_extent, vertical_extent):
+    aspect = 800.0 / 600.0
+    return max(horizontal_extent, vertical_extent * aspect) * 1.20
+
+
+def add_sun(name, location, target, collection):
+    light_data = bpy.data.lights.new(f"{name}_data", "SUN")
+    light_data.energy = 2.0
+    light = bpy.data.objects.new(name, light_data)
+    light.location = location
+    collection.objects.link(light)
+    look_at(light, target)
+    return light
+
+
+def add_area_light(name, location, target, size, energy, collection):
+    light_data = bpy.data.lights.new(f"{name}_data", "AREA")
+    light_data.size = size
+    light_data.energy = energy
+    light = bpy.data.objects.new(name, light_data)
+    light.location = location
+    collection.objects.link(light)
+    look_at(light, target)
+    return light
+
+
+def configure_render_settings():
+    try:
+        bpy.context.scene.render.engine = "BLENDER_EEVEE_NEXT"
+    except TypeError:
+        bpy.context.scene.render.engine = "BLENDER_EEVEE"
+    bpy.context.scene.render.resolution_x = 800
+    bpy.context.scene.render.resolution_y = 600
+    bpy.context.scene.render.resolution_percentage = 100
+    bpy.context.scene.render.image_settings.file_format = "PNG"
+    bpy.context.scene.world = bpy.context.scene.world or bpy.data.worlds.new("World")
+    bpy.context.scene.world.color = (0.88, 0.89, 0.90)
+
+
+def add_cameras(dims, collection):
+    bounds = calculate_world_bounds(mesh_objects_from_collections(("Structure", "Openings", "Roof")))
+    target = bounds["center"]
+    x_extent = bounds["max_x"] - bounds["min_x"]
+    y_extent = bounds["max_y"] - bounds["min_y"]
+    z_extent = bounds["max_z"] - bounds["min_z"]
+    distance = max(x_extent, y_extent, z_extent) * 2.4
+    front_scale = orthographic_scale(x_extent, z_extent)
+    back_scale = orthographic_scale(x_extent, z_extent)
+    left_scale = orthographic_scale(y_extent, z_extent)
+    right_scale = orthographic_scale(y_extent, z_extent)
+
+    return {
+        "front": add_camera(
+            "camera_front",
+            (target[0], bounds["min_y"] - distance, target[2]),
+            target,
+            front_scale,
+            collection,
+        ),
+        "back": add_camera(
+            "camera_back",
+            (target[0], bounds["max_y"] + distance, target[2]),
+            target,
+            back_scale,
+            collection,
+        ),
+        "left": add_camera(
+            "camera_left",
+            (bounds["min_x"] - distance, target[1], target[2]),
+            target,
+            left_scale,
+            collection,
+        ),
+        "right": add_camera(
+            "camera_right",
+            (bounds["max_x"] + distance, target[1], target[2]),
+            target,
+            right_scale,
+            collection,
+        ),
+    }
+
+
+def add_lighting(dims, collection):
+    roof_span_half = (dims["width"] / 2.0) + dims["roof_overhang"]
+    roof_height = roof_span_half * math.tan(math.radians(dims["roof_pitch_degrees"]))
+    total_height = dims["wall_height"] + roof_height
+    target = (0.0, 0.0, total_height / 2.0)
+    radius = max(dims["width"], dims["depth"], total_height)
+
+    add_sun("sun_key", (-radius, -radius, total_height + radius), target, collection)
+    light_size = max(dims["width"], dims["depth"])
+    light_energy = 280.0
+    add_area_light(
+        "area_fill_front",
+        (0.0, -(dims["depth"] + radius), total_height),
+        target,
+        light_size,
+        light_energy,
+        collection,
+    )
+    add_area_light(
+        "area_fill_back",
+        (0.0, dims["depth"] + radius, total_height),
+        target,
+        light_size,
+        light_energy,
+        collection,
+    )
+    add_area_light(
+        "area_fill_left",
+        (-(dims["width"] + radius), 0.0, total_height),
+        target,
+        light_size,
+        light_energy,
+        collection,
+    )
+    add_area_light(
+        "area_fill_right",
+        (dims["width"] + radius, 0.0, total_height),
+        target,
+        light_size,
+        light_energy,
+        collection,
+    )
+
+
+def render_views(cameras, render_paths):
+    for view_name, camera in cameras.items():
+        render_path = render_paths[view_name]
+        render_path.parent.mkdir(parents=True, exist_ok=True)
+        bpy.context.scene.camera = camera
+        bpy.context.scene.render.filepath = str(render_path)
+        bpy.ops.render.render(write_still=True)
+
+        if not render_path.is_file():
+            raise RuntimeError(f"Render ontbreekt: {render_path}")
+        if render_path.stat().st_size <= 0:
+            raise RuntimeError(f"Render is leeg: {render_path}")
 
 
 def build_scene(config, out_dir):
     dims = validate_config(config)
-    out_root, blend_path = resolve_output_path(out_dir, config["output"]["blend"])
+    out_root, blend_path, render_paths = resolve_output_paths(out_dir, config["output"])
 
     clear_scene()
     bpy.context.scene.unit_settings.system = "METRIC"
     bpy.context.scene.unit_settings.scale_length = 1.0
     bpy.context.scene.unit_settings.length_unit = "METERS"
+    configure_render_settings()
 
     structure = make_collection("Structure")
     openings = make_collection("Openings")
     roof = make_collection("Roof")
+    cameras_collection = make_collection("Cameras")
+    lighting_collection = make_collection("Lighting")
 
     wall_mat = make_material("material_walls_warm_gray", (0.72, 0.70, 0.65, 1.0))
     floor_mat = make_material("material_floor_concrete", (0.45, 0.48, 0.48, 1.0))
@@ -342,6 +573,9 @@ def build_scene(config, out_dir):
         add_panel(opening["id"], "back", opening, dims["depth"], glass_mat, openings)
 
     add_roof(dims, roof_mat, roof)
+    cameras = add_cameras(dims, cameras_collection)
+    add_lighting(dims, lighting_collection)
+    render_views(cameras, render_paths)
 
     blend_path.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(blend_path))
