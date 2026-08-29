@@ -8,7 +8,7 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 
 ## 2. Voortgang op hoofdlijnen
 
-- [ ] Fase 0 — Projectbesturing en uitgangspunten
+- [x] Fase 0 — Projectbesturing en uitgangspunten
 - [ ] Fase 1 — Lokale omgeving en Git/GitHub
 - [ ] Fase 2 — Verticale Blender-proefopstelling
 - [ ] Fase 3 — Eisen, referenties en maatvoering
@@ -23,7 +23,7 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 
 | Mijlpaal | Resultaat | Status |
 |---|---|---|
-| M0 | Repository bestuurbaar | Niet gestart |
+| M0 | Repository bestuurbaar | Voltooid |
 | M1 | IntelliJ → Blender automatisering werkt | Niet gestart |
 | M2 | Eisen en maatvoering goedgekeurd | Niet gestart |
 | M3 | Maatvast casco gegenereerd | Niet gestart |
@@ -36,7 +36,7 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 ### Fase 0 — Projectbesturing en uitgangspunten
 
 - [x] Startdocumenten in repository plaatsen.
-- [ ] Bestanden controleren en eerste documentatiecommit maken.
+- [x] Bestanden controleren en eerste documentatiecommit maken.
 - [x] Projectdoel, doelgroep en prototype-niveau bevestigen.
 - [x] Rollen bevestigen: gebruiker als projecteigenaar, ChatGPT als projectregisseur, Codex als uitvoerder.
 - [x] Regels voor goedkeuring en planwijziging bevestigen.
