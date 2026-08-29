@@ -15,6 +15,7 @@ Algemene status: Gereed voor inventarisatie
 - Lokale omgeving read-only geïnventariseerd.
 - Blender 5.2.1 LTS geverifieerd als beoogde projectbasis.
 - Blender-Python 3.13.13 geverifieerd.
+- `.gitattributes` en DEC-003 voorbereid voor repositorybrede regelafhandeling.
 - IntelliJ-project `D:\repo\blender_design` aangemaakt.
 - Git-repository zichtbaar in IntelliJ.
 - Codex werkt met directory `D:\repo\blender_design` en `workspace-write`.
@@ -27,7 +28,7 @@ Algemene status: Gereed voor inventarisatie
 
 ## Actief
 
-- Git-regelafhandeling en GitHub-remote gecontroleerd vaststellen.
+- Afzonderlijke gecontroleerde renormalisatiecheck voorbereiden.
 
 ## Geblokkeerd
 
@@ -37,6 +38,8 @@ Algemene status: Gereed voor inventarisatie
 
 - `PATH` is bewust nog niet aangepast voor Blender.
 - Oudere Blender-installaties 4.1.1 en 4.3.0 zijn aanwezig, maar blokkeren niet omdat toekomstige scripts `BLENDER_EXECUTABLE` gebruiken.
+- Systeemwijde `core.autocrlf=true` wordt bewust niet gewijzigd; `.gitattributes` is de projectbrede regelconfiguratie.
+- GitHub-koppeling blijft na de renormalisatiecheck nog open.
 
 ## Besluiten nodig
 
@@ -44,7 +47,7 @@ Algemene status: Gereed voor inventarisatie
 
 ## Eerstvolgende Codex-opdracht
 
-Stel Git-regelafhandeling en GitHub-remote gecontroleerd vast.
+Voer een afzonderlijke gecontroleerde renormalisatiecheck uit.
 
 ## Bewijs voor afronding
 

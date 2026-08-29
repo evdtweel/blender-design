@@ -1,0 +1,79 @@
+# Default text-file policy: normalize text and use LF.
+* text=auto eol=lf
+
+# Repository metadata and documentation.
+.gitignore text eol=lf
+.gitattributes text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+
+# Source code and scripts.
+*.py text eol=lf
+*.pyi text eol=lf
+*.ps1 text eol=lf
+*.sh text eol=lf
+*.js text eol=lf
+*.mjs text eol=lf
+*.cjs text eol=lf
+*.ts text eol=lf
+
+# Windows command scripts.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Configuration and structured text.
+*.json text eol=lf
+*.jsonc text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.toml text eol=lf
+*.ini text eol=lf
+*.cfg text eol=lf
+*.xml text eol=lf
+*.csv text eol=lf
+*.env.example text eol=lf
+
+# Text-based 3D and web formats.
+*.gltf text eol=lf
+*.obj text eol=lf
+*.mtl text eol=lf
+*.svg text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+
+# Blender and binary 3D formats.
+*.blend binary
+*.glb binary
+*.fbx binary
+*.stl binary
+
+# Images and textures.
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.gif binary
+*.bmp binary
+*.tif binary
+*.tiff binary
+*.exr binary
+*.hdr binary
+
+# Fonts.
+*.ttf binary
+*.otf binary
+*.woff binary
+*.woff2 binary
+
+# Audio and video.
+*.wav binary
+*.mp3 binary
+*.mp4 binary
+*.mov binary
+*.avi binary
+
+# Archives and packaged assets.
+*.zip binary
+*.7z binary
+*.tar binary
+*.gz binary

@@ -54,7 +54,7 @@ Acceptatie:
 - [x] Ondersteunde Blender LTS-versie kiezen en vastleggen.
 - [x] Pad naar `blender.exe` detecteren zonder machinepad te committen.
 - [ ] Run-configuratie of PowerShell-wrapper ontwerpen.
-- [ ] `.gitignore` en `.gitattributes` opstellen.
+- [x] `.gitignore` en `.gitattributes` opstellen.
 - [ ] Beslissen welke binaire bestanden Git LFS gebruiken.
 - [ ] GitHub-remote en standaardbranch controleren.
 - [ ] Branch- en commitconventies vastleggen.
