@@ -10,7 +10,7 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 
 - [x] Fase 0 — Projectbesturing en uitgangspunten
 - [x] Fase 1 — Lokale omgeving en Git/GitHub
-- [ ] Fase 2 — Verticale Blender-proefopstelling
+- [x] Fase 2 — Verticale Blender-proefopstelling
 - [ ] Fase 3 — Eisen, referenties en maatvoering
 - [ ] Fase 4 — Parametrisch casco
 - [ ] Fase 5 — Architectonische indeling en onderdelen
@@ -24,7 +24,7 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 | Mijlpaal | Resultaat | Status |
 |---|---|---|
 | M0 | Repository bestuurbaar | Voltooid |
-| M1 | IntelliJ → Blender automatisering werkt | In uitvoering |
+| M1 | IntelliJ → Blender automatisering werkt | Voltooid |
 | M2 | Eisen en maatvoering goedgekeurd | Niet gestart |
 | M3 | Maatvast casco gegenereerd | Niet gestart |
 | M4 | Compleet architectonisch prototype | Niet gestart |
@@ -71,22 +71,22 @@ Acceptatie:
 
 - [x] Ontwerpanalyse voor Fase 2 uitvoeren.
 - [x] DEC-005 voor commandoketen, proefwoning en outputbeleid goedkeuren.
-- [ ] Minimale projectmappen aanmaken.
-- [ ] Configuratie voor een kleine proefwoning maken.
-- [ ] Script maken dat scène, units en collections initialiseert.
-- [ ] Vier buitenwanden, één binnenwand, deur, ramen en eenvoudig dak genereren.
-- [ ] `.blend` automatisch opslaan.
-- [ ] Vaste controlecamera's en verlichting toevoegen.
-- [ ] Vier aanzichten renderen.
-- [ ] `.glb` exporteren.
-- [ ] Basisvalidatie uitvoeren en rapport schrijven.
+- [x] Minimale projectmappen aanmaken.
+- [x] Configuratie voor een kleine proefwoning maken.
+- [x] Script maken dat scène, units en collections initialiseert.
+- [x] Vier buitenwanden, één binnenwand, deur, ramen en eenvoudig dak genereren.
+- [x] `.blend` automatisch opslaan.
+- [x] Vaste controlecamera's en verlichting toevoegen.
+- [x] Vier aanzichten renderen.
+- [x] `.glb` exporteren.
+- [x] Basisvalidatie uitvoeren en rapport schrijven.
 
 Acceptatie:
 
-- [ ] Eén commando bouwt de proefscène opnieuw op.
-- [ ] Blender eindigt zonder Python-fout.
-- [ ] `.blend`, `.glb`, renders en validatierapport bestaan.
-- [ ] De gebruiker keurt de zichtbare proefuitvoer goed.
+- [x] Eén commando bouwt de proefscène opnieuw op.
+- [x] Blender eindigt zonder Python-fout.
+- [x] `.blend`, `.glb`, renders en validatierapport bestaan.
+- [x] De gebruiker keurt de zichtbare proefuitvoer goed.
 
 ### Fase 3 — Eisen, referenties en maatvoering
 
