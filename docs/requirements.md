@@ -44,6 +44,10 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Door Edward bevestigd: voorgevel en openbare weg liggen aan de oostzijde.
 - Door Edward bevestigd: de achterzijde ligt aan de westzijde.
 - Door Edward bevestigd: de noordzijde ligt rechts op de plattegrond.
+- Door Edward bevestigd op basis van de noordpijl en voorgevel: gevel 1 is oost/voorgevel.
+- Door Edward bevestigd op basis van de noordpijl en voorgevel: gevel 2 is zuid.
+- Door Edward bevestigd op basis van de noordpijl en voorgevel: gevel 3 is west/achtergevel.
+- Door Edward bevestigd op basis van de noordpijl en voorgevel: gevel 4 is noord.
 - Nog aan te leveren door Edward: eventuele situatiegegevens die invloed hebben op oriëntatie, zichtlijnen of plaatsing.
 
 ### Perceel
@@ -55,7 +59,8 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 ### Buitenmaten en bouwvolume
 
 - Rechtstreeks afgelezen tekeningmaat: structureel hoofdraster woning circa 10,50 meter noord-zuid bij 16,00 meter oost-west.
-- Rechtstreeks afgelezen tekeningmaat: nokniveau volgens doorsnede circa +4,85 meter.
+- Bevestigd voorlopig leidend nokpeil: +4.85 m, bronbladen `5.A04-01.pdf` t/m `8.A04-04.pdf` en `10.A05-02.pdf`.
+- Onopgeloste tekeningsafwijking: `10.A05-02.pdf` toont ook 4.94 m; deze maat wordt niet voor modellering gebruikt zonder later expliciet besluit.
 - Nog aan te leveren door Edward: maximale bouwhoogte of andere volumegrenzen.
 - Nog aan te leveren door Edward: definitieve buitenwerkse gevelmaten wanneer die afwijken van het structurele hoofdraster.
 
@@ -63,7 +68,7 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 - Door Edward bevestigd: één verhoogde bouwlaag.
 - Rechtstreeks afgelezen tekeningmaat: hoofdvloerniveau circa +1,50 meter boven maaiveld.
-- Rechtstreeks afgelezen tekeningmaat: nokniveau volgens doorsnede circa +4,85 meter.
+- Bevestigd voorlopig leidend nokpeil: +4.85 m, bronbladen `5.A04-01.pdf` t/m `8.A04-04.pdf` en `10.A05-02.pdf`.
 - Nog aan te leveren door Edward: overige niveaus en exacte peilmaten indien nodig voor detaillering.
 
 ### Ruimtelijst en netto-oppervlakten
@@ -82,7 +87,37 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 ### Ramen en deuren
 
 - Door Edward bevestigd: ramen en deuren moeten worden gebaseerd op de aangeleverde bouwtekeningen.
-- Nog aan te leveren door Edward: plaatsing, afmetingen, draairichting en type van ramen en deuren.
+- Door Edward bevestigd: de raam- en deurenschemabladen zijn 90 graden gedraaid weergegeven; breedte en hoogte zijn gecorrigeerd geinterpreteerd.
+
+#### Raamtypen
+
+Bronbladen: `11.A06-01.pdf` voor W1 t/m W4 en `12.A06-02.pdf` voor W5 t/m W7.
+
+| Type | Breedte | Hoogte | Borstwering | Aantal | Status |
+|---|---:|---:|---:|---:|---|
+| W1 | 2.00 m | 1.40 m | 0.60 m | 4 | Bevestigd |
+| W2 | 3.00 m | 1.40 m | 0.60 m | 2 | Bevestigd |
+| W3 | 0.50 m | 1.40 m | 0.60 m | 4 | Bevestigd |
+| W4 | 1.35 m | 1.15 m | 0.90 m | 1 | Bevestigd |
+| W5 | 1.00 m | 1.10 m | 0.90 m | 2 | Bevestigd |
+| W6 | 1.50 m | 1.10 m | 0.90 m | 1 | Bevestigd |
+| W7 | 1.00 m | 0.40 m | 1.60 m | 1 | Bevestigd |
+
+#### Deurtypen
+
+Bronbladen: `11.A06-01.pdf` voor D1 t/m D4, `3.A03-01.pdf` voor controle buiten-/binnendeuren en `5.A04-01.pdf` voor de entreepartij D1.
+
+| Type | Breedte | Hoogte | Aantal | Type/functie | Eerste buitenmodelscope | Status |
+|---|---:|---:|---:|---|---|---|
+| D1 | 2.80 m | 2.00 m | 1 | Buitendeur/entreepartij | Relevant | Bevestigd |
+| D2 | 0.80 m | 2.00 m | 3 | Binnendeur | Niet relevant | Bevestigd |
+| D3 | 0.70 m | 2.00 m | 1 | Binnendeur | Niet relevant | Bevestigd |
+| D4 | 0.80 m | 2.00 m | 2 | Buitendeur | Relevant | Bevestigd |
+
+- Bevestigd op `3.A03-01.pdf`: D2 en D3 zijn binnendeuren en worden niet meegenomen als buitenopeningen in de eerste buitenmodelscope.
+- Bevestigd op `3.A03-01.pdf` en `5.A04-01.pdf`: D1 is de entreepartij aan de oostelijke voorgevel en is relevant voor het buitenmodel.
+- Bevestigd op `3.A03-01.pdf`: D4 is een buitendeurtype en is relevant voor het buitenmodel.
+- Nog aan te leveren of verder uit te werken: exacte plaatsing per gevel van alle buitenramen en buitendeuren in machineleesbare configuratie.
 
 ### Trappen en doorloopmaten
 
@@ -95,7 +130,8 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Door Edward bevestigd: samengesteld hellend dak.
 - Rechtstreeks afgelezen tekeningmaat: dakhelling circa 35 graden.
 - Rechtstreeks afgelezen tekeningmaat: dakoverstek circa 1,00 meter.
-- Rechtstreeks afgelezen tekeningmaat: nokniveau volgens doorsnede circa +4,85 meter.
+- Bevestigd voorlopig leidend nokpeil: +4.85 m, bronbladen `5.A04-01.pdf` t/m `8.A04-04.pdf` en `10.A05-02.pdf`.
+- Onopgeloste tekeningsafwijking: `10.A05-02.pdf` toont ook 4.94 m; deze maat wordt niet voor modellering gebruikt zonder later expliciet besluit.
 - Nog aan te leveren door Edward: hemelwaterafvoer.
 - Nog aan te leveren door Edward: nokrichtingen, dakvlakken, goten, regenpijpen en dakdetails.
 
@@ -149,7 +185,7 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Nog aan te leveren door Edward: overige niveaus en exacte peilmaten indien nodig voor detaillering.
 - Nog aan te leveren door Edward: gewenste netto-oppervlakten.
 - Nog aan te leveren door Edward: wand-, vloer- en dakdiktes.
-- Nog aan te leveren door Edward: exacte plaatsing, afmetingen, draairichting en type van ramen en deuren.
+- Nog aan te leveren door Edward: exacte plaatsing per gevel en draairichting van ramen en buitendeuren voor machineleesbare configuratie.
 - Nog aan te leveren door Edward: exacte trappen, doorloopmaten, vrije hoogtes en trapbreedtes.
 - Nog aan te leveren door Edward: hemelwaterafvoer, nokrichtingen, dakvlakken, goten, regenpijpen en dakdetails.
 - Nog aan te leveren door Edward: materiaal- en stijldetails voor latere materiaal- en detailverificatie.
