@@ -1,0 +1,35 @@
+# IDE and editor project files
+.idea/
+*.iml
+
+# Local Codex handoff report
+/CODEX_RESULT.md
+/CODEX_*_RESULT.md
+
+# Python cache and bytecode
+__pycache__/
+*.pyc
+
+# Blender temporary backup files
+*.blend[0-9]
+*.blend[0-9][0-9]
+*.blend[0-9][0-9][0-9]
+
+# Temporary files and logs
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+~$*
+
+# Local environment, secrets, and machine-specific config
+.env
+.env.*
+*.local
+*.secret
+*.secrets
+
+# Operating system files
+Thumbs.db
+.DS_Store
