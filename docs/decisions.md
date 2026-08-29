@@ -45,3 +45,13 @@ Gebruik per belangrijk besluit:
 - Alternatieven: Vertrouwen op lokale Git-configuratie of regelafhandeling pas later bepalen.
 - Gevolgen: Toekomstige bestandsnormalisatie moet tegen `.gitattributes` worden gecontroleerd. Renormalisatie wordt afzonderlijk gecontroleerd en niet vermengd met deze besluitcommit.
 - Goedgekeurd door: Projecteigenaar op 29 augustus 2026.
+
+## DEC-004 — GitHub-repository en branchconventie
+
+- Datum: 29 augustus 2026
+- Status: Goedgekeurd
+- Aanleiding: De lokale repository moet reproduceerbaar met de bedoelde private GitHub-repository verbonden zijn.
+- Besluit: Gebruik de private GitHub-repository `evdtweel/blender-design` met HTTPS-remote `origin`. `main` is de standaardwerkbranch en de lokale branch `main` volgt `origin/main`.
+- Alternatieven: De lokale branch `master` behouden, SSH als remoteprotocol gebruiken, of de remote pas later koppelen.
+- Gevolgen: Gewone pushes gaan naar `origin/main`. Pushes gebruiken geen force, tenzij de projecteigenaar daarvoor later expliciet toestemming geeft.
+- Goedgekeurd door: Projecteigenaar op 29 augustus 2026.

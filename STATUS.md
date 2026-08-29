@@ -1,21 +1,26 @@
 # Projectstatus
 
 Laatste update: 29 augustus 2026
-Huidige fase: Fase 1 — Lokale omgeving en Git/GitHub
-Algemene status: Gereed voor inventarisatie
+Huidige fase: Fase 2 — Verticale Blender-proefopstelling
+Algemene status: Gereed voor ontwerp
 
 ## Afgerond
 
 - Fase 0 — Projectbesturing en uitgangspunten afgerond.
+- Fase 1 — Lokale omgeving en Git/GitHub afgerond.
 - Projectbesturing ingericht.
 - `AGENTS.md` actief.
 - Resultaatrapportage actief.
 - Repository-hygiëne ingericht.
 - Eerste gecontroleerde commit gemaakt: `a75ac31`.
+- Bewijscommit vóór Fase 1-afsluiting: `c84d938`.
 - Lokale omgeving read-only geïnventariseerd.
 - Blender 5.2.1 LTS geverifieerd als beoogde projectbasis.
 - Blender-Python 3.13.13 geverifieerd.
 - `.gitattributes` en DEC-003 voorbereid voor repositorybrede regelafhandeling.
+- `.gitattributes` en renormalisatie gecontroleerd; renormalisatie leverde geen bestandswijzigingen op.
+- Repository gekoppeld aan GitHub: `https://github.com/evdtweel/blender-design`.
+- Branch `main` volgt `origin/main`.
 - IntelliJ-project `D:\repo\blender_design` aangemaakt.
 - Git-repository zichtbaar in IntelliJ.
 - Codex werkt met directory `D:\repo\blender_design` en `workspace-write`.
@@ -28,7 +33,7 @@ Algemene status: Gereed voor inventarisatie
 
 ## Actief
 
-- Afzonderlijke gecontroleerde renormalisatiecheck voorbereiden.
+- Fase 2 voorbereiden met een read-only analyse van eisen, architectuur en commandoketen.
 
 ## Geblokkeerd
 
@@ -39,7 +44,7 @@ Algemene status: Gereed voor inventarisatie
 - `PATH` is bewust nog niet aangepast voor Blender.
 - Oudere Blender-installaties 4.1.1 en 4.3.0 zijn aanwezig, maar blokkeren niet omdat toekomstige scripts `BLENDER_EXECUTABLE` gebruiken.
 - Systeemwijde `core.autocrlf=true` wordt bewust niet gewijzigd; `.gitattributes` is de projectbrede regelconfiguratie.
-- GitHub-koppeling blijft na de renormalisatiecheck nog open.
+- Pushes gebruiken geen force zonder latere expliciete toestemming van de projecteigenaar.
 
 ## Besluiten nodig
 
@@ -47,7 +52,7 @@ Algemene status: Gereed voor inventarisatie
 
 ## Eerstvolgende Codex-opdracht
 
-Voer een afzonderlijke gecontroleerde renormalisatiecheck uit.
+Voer een read-only analyse uit van de eisen, architectuur en gewenste IntelliJ–Blender-commandoketen.
 
 ## Bewijs voor afronding
 
@@ -58,4 +63,4 @@ Voer een afzonderlijke gecontroleerde renormalisatiecheck uit.
 
 ## Huidige fase
 
-Fase 1 — Lokale omgeving en Git/GitHub inventariseren.
+Fase 2 — Verticale Blender-proefopstelling.

@@ -9,7 +9,7 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 ## 2. Voortgang op hoofdlijnen
 
 - [x] Fase 0 — Projectbesturing en uitgangspunten
-- [ ] Fase 1 — Lokale omgeving en Git/GitHub
+- [x] Fase 1 — Lokale omgeving en Git/GitHub
 - [ ] Fase 2 — Verticale Blender-proefopstelling
 - [ ] Fase 3 — Eisen, referenties en maatvoering
 - [ ] Fase 4 — Parametrisch casco
@@ -24,7 +24,7 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 | Mijlpaal | Resultaat | Status |
 |---|---|---|
 | M0 | Repository bestuurbaar | Voltooid |
-| M1 | IntelliJ → Blender automatisering werkt | Niet gestart |
+| M1 | IntelliJ → Blender automatisering werkt | Voltooid |
 | M2 | Eisen en maatvoering goedgekeurd | Niet gestart |
 | M3 | Maatvast casco gegenereerd | Niet gestart |
 | M4 | Compleet architectonisch prototype | Niet gestart |
@@ -53,17 +53,17 @@ Acceptatie:
 - [x] Windows-, IntelliJ-, Git-, Python- en Blender-versies inventariseren.
 - [x] Ondersteunde Blender LTS-versie kiezen en vastleggen.
 - [x] Pad naar `blender.exe` detecteren zonder machinepad te committen.
-- [ ] Run-configuratie of PowerShell-wrapper ontwerpen.
+- [x] Padstrategie via `BLENDER_EXECUTABLE` vastleggen.
 - [x] `.gitignore` en `.gitattributes` opstellen.
-- [ ] Beslissen welke binaire bestanden Git LFS gebruiken.
-- [ ] GitHub-remote en standaardbranch controleren.
-- [ ] Branch- en commitconventies vastleggen.
+- [x] Renormalisatiecontrole uitvoeren.
+- [x] GitHub-remote, branch `main`, upstream en eerste push controleren.
+- [x] Branch- en commitconventies vastleggen.
 
 Acceptatie:
 
-- [ ] Blender-versie en uitvoerbaar pad zijn aantoonbaar gevonden.
-- [ ] Repository bevat geen IDE-rommel, secrets of tijdelijke Blender-bestanden.
-- [ ] Push/pull naar de bedoelde GitHub-repository werkt.
+- [x] Blender-versie en uitvoerbaar pad zijn aantoonbaar gevonden.
+- [x] Repository bevat geen IDE-rommel, secrets of tijdelijke Blender-bestanden.
+- [x] Push/pull naar de bedoelde GitHub-repository werkt.
 
 ### Fase 2 — Verticale Blender-proefopstelling
 
