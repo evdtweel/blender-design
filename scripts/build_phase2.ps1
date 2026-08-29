@@ -122,6 +122,119 @@ function Resolve-BlendOutputPath {
     return $blendPath
 }
 
+function Resolve-ConfiguredOutputPath {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$RelativePath,
+
+        [Parameter(Mandatory = $true)]
+        [string]$ResolvedOutDir,
+
+        [Parameter(Mandatory = $true)]
+        [string]$FieldName
+    )
+
+    if ([string]::IsNullOrWhiteSpace($RelativePath)) {
+        throw "Configuratieveld $FieldName is leeg."
+    }
+
+    if ([System.IO.Path]::IsPathRooted($RelativePath)) {
+        throw "Configuratieveld $FieldName mag geen absoluut pad zijn: $RelativePath"
+    }
+
+    $segments = @($RelativePath -split '[\\/]')
+    if ($segments -contains '..') {
+        throw "Configuratieveld $FieldName mag geen '..'-padsegment bevatten: $RelativePath"
+    }
+
+    $outputPath = [System.IO.Path]::GetFullPath((Join-Path -Path $ResolvedOutDir -ChildPath $RelativePath))
+    $resolvedOutDirForComparison = [System.IO.Path]::GetFullPath($ResolvedOutDir).TrimEnd('\')
+    $resolvedOutputPath = $outputPath.TrimEnd('\')
+
+    if (-not $resolvedOutputPath.StartsWith($resolvedOutDirForComparison + '\', [System.StringComparison]::OrdinalIgnoreCase)) {
+        throw "Geconfigureerde uitvoer valt buiten de outputmap: $outputPath"
+    }
+
+    return $outputPath
+}
+
+function Resolve-BuildLogOutputPath {
+    param(
+        [Parameter(Mandatory = $true)]
+        [pscustomobject]$ConfigObject,
+
+        [Parameter(Mandatory = $true)]
+        [string]$ResolvedOutDir
+    )
+
+    $outputFields = @($ConfigObject.output.PSObject.Properties | ForEach-Object { $_.Name })
+    if ($outputFields -notcontains 'buildLog') {
+        return Resolve-ConfiguredOutputPath -RelativePath 'logs/build.log' -ResolvedOutDir $ResolvedOutDir -FieldName 'output.buildLog'
+    }
+
+    return Resolve-ConfiguredOutputPath -RelativePath ([string]$ConfigObject.output.buildLog) -ResolvedOutDir $ResolvedOutDir -FieldName 'output.buildLog'
+}
+
+function ConvertTo-NativeCommandLineArgument {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Argument
+    )
+
+    if ($Argument -notmatch '[\s"]') {
+        return $Argument
+    }
+
+    return '"' + ($Argument.Replace('"', '\"')) + '"'
+}
+
+function Invoke-LoggedNativeCommand {
+    param(
+        [Parameter(Mandatory = $true)]
+        [string]$Executable,
+
+        [Parameter(Mandatory = $true)]
+        [string[]]$Arguments,
+
+        [Parameter(Mandatory = $true)]
+        [string]$LogPath
+    )
+
+    $logDirectory = Split-Path -Parent $LogPath
+    $stdoutPath = Join-Path -Path $logDirectory -ChildPath 'build.stdout.tmp'
+    $stderrPath = Join-Path -Path $logDirectory -ChildPath 'build.stderr.tmp'
+    $quotedArguments = $Arguments | ForEach-Object { ConvertTo-NativeCommandLineArgument -Argument $_ }
+
+    try {
+        $process = Start-Process `
+            -FilePath $Executable `
+            -ArgumentList $quotedArguments `
+            -RedirectStandardOutput $stdoutPath `
+            -RedirectStandardError $stderrPath `
+            -NoNewWindow `
+            -PassThru `
+            -Wait
+
+        $stdout = if (Test-Path -LiteralPath $stdoutPath) { Get-Content -LiteralPath $stdoutPath -Raw } else { '' }
+        $stderr = if (Test-Path -LiteralPath $stderrPath) { Get-Content -LiteralPath $stderrPath -Raw } else { '' }
+        $combinedOutput = $stdout + $stderr
+
+        Set-Content -LiteralPath $LogPath -Value $combinedOutput -NoNewline -Encoding UTF8
+
+        if (-not [string]::IsNullOrEmpty($stdout)) {
+            [Console]::Out.Write($stdout)
+        }
+        if (-not [string]::IsNullOrEmpty($stderr)) {
+            [Console]::Error.Write($stderr)
+        }
+
+        return $process.ExitCode
+    }
+    finally {
+        Remove-Item -LiteralPath $stdoutPath, $stderrPath -Force -ErrorAction SilentlyContinue
+    }
+}
+
 try {
     $repoRoot = Split-Path -Parent $PSScriptRoot
     $configPath = Resolve-ProjectPath -RepoRoot $repoRoot -Path $Config
@@ -173,6 +286,7 @@ try {
 
     try {
         $blendPath = Resolve-BlendOutputPath -ConfigObject $configObject -ResolvedOutDir $outDirPath
+        $buildLogPath = Resolve-BuildLogOutputPath -ConfigObject $configObject -ResolvedOutDir $outDirPath
     }
     catch {
         [Console]::Error.WriteLine($_.Exception.Message)
@@ -209,8 +323,12 @@ try {
         $outDirPath
     )
 
-    & $blenderExecutable @blenderArgs
-    $blenderExitCode = $LASTEXITCODE
+    $buildLogParent = Split-Path -Parent $buildLogPath
+    if (-not (Test-Path -LiteralPath $buildLogParent -PathType Container)) {
+        New-Item -ItemType Directory -Path $buildLogParent | Out-Null
+    }
+
+    $blenderExitCode = Invoke-LoggedNativeCommand -Executable $blenderExecutable -Arguments $blenderArgs -LogPath $buildLogPath
 
     if ($blenderExitCode -ne 0) {
         [Console]::Error.WriteLine("Blender eindigde met exitcode $blenderExitCode.")
@@ -228,7 +346,9 @@ try {
         exit 20
     }
 
-    Write-Host "Build geslaagd: $blendPath"
+    $successMessage = "Build geslaagd: $blendPath"
+    Write-Host $successMessage
+    Add-Content -LiteralPath $buildLogPath -Value $successMessage
     exit 0
 }
 catch {
