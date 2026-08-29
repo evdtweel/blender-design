@@ -88,6 +88,9 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 - Door Edward bevestigd: ramen en deuren moeten worden gebaseerd op de aangeleverde bouwtekeningen.
 - Door Edward bevestigd: de raam- en deurenschemabladen zijn 90 graden gedraaid weergegeven; breedte en hoogte zijn gecorrigeerd geinterpreteerd.
+- Door Edward bevestigd: alle ramen en buitendeuren worden in het eerste eenvoudige buitenmodel gesloten weergegeven.
+- Buiten de eerste modelscope: scharnieren, draairichtingen, beslag, openingsstanden en animatie.
+- Later toe te voegen indien nodig: scharnieren, draairichtingen, beslag, openingsstanden en animatie op basis van aanvullende betrouwbare informatie.
 
 #### Raamtypen
 
@@ -217,7 +220,7 @@ Tijdelijke plaatsingsregel voor het eerste eenvoudige buitenmodel, goedgekeurd d
 - Nog aan te leveren door Edward: gewenste netto-oppervlakten.
 - Nog aan te leveren door Edward: wand-, vloer- en dakdiktes.
 - Tijdelijk opgelost voor het eerste buitenmodel: ontbrekende offsets van buitenopeningen binnen bevestigde asvakken volgens de tijdelijke plaatsingsregel; later te verifieren of te vervangen door actuele inmetingen of aanvullende betrouwbare maatvoering.
-- Nog aan te leveren door Edward: draairichting van ramen en buitendeuren voor machineleesbare configuratie.
+- Tijdelijk opgelost voor het eerste buitenmodel: draairichtingen van ramen en buitendeuren zijn niet nodig omdat alle ramen en buitendeuren gesloten worden weergegeven; draairichtingen blijven later toe te voegen wanneer deze informatie nodig is voor verdere detaillering.
 - Nog aan te leveren door Edward: exacte trappen, doorloopmaten, vrije hoogtes en trapbreedtes.
 - Nog aan te leveren door Edward: hemelwaterafvoer, nokrichtingen, dakvlakken, goten, regenpijpen en dakdetails.
 - Nog aan te leveren door Edward: materiaal- en stijldetails voor latere materiaal- en detailverificatie.
