@@ -93,31 +93,53 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 Bronbladen: `11.A06-01.pdf` voor W1 t/m W4 en `12.A06-02.pdf` voor W5 t/m W7.
 
-| Type | Breedte | Hoogte | Borstwering | Aantal | Status |
-|---|---:|---:|---:|---:|---|
-| W1 | 2.00 m | 1.40 m | 0.60 m | 4 | Bevestigd |
-| W2 | 3.00 m | 1.40 m | 0.60 m | 2 | Bevestigd |
-| W3 | 0.50 m | 1.40 m | 0.60 m | 4 | Bevestigd |
-| W4 | 1.35 m | 1.15 m | 0.90 m | 1 | Bevestigd |
-| W5 | 1.00 m | 1.10 m | 0.90 m | 2 | Bevestigd |
-| W6 | 1.50 m | 1.10 m | 0.90 m | 1 | Bevestigd |
-| W7 | 1.00 m | 0.40 m | 1.60 m | 1 | Bevestigd |
+| Type | Breedte | Hoogte | Borstwering | Aantal | Ligging/functie | Eerste buitenmodelscope | Status |
+|---|---:|---:|---:|---:|---|---|---|
+| W1 | 2.00 m | 1.40 m | 0.60 m | 4 | Buitenraam | Relevant | Bevestigd |
+| W2 | 3.00 m | 1.40 m | 0.60 m | 2 | Buitenraam | Relevant | Bevestigd |
+| W3 | 0.50 m | 1.40 m | 0.60 m | 4 | Buitenraam | Relevant | Bevestigd |
+| W4 | 1.35 m | 1.15 m | 0.90 m | 1 | Interne opening tussen keuken en eetruimte | Niet relevant | Bevestigd |
+| W5 | 1.00 m | 1.10 m | 0.90 m | 2 | Buitenraam | Relevant | Bevestigd |
+| W6 | 1.50 m | 1.10 m | 0.90 m | 1 | Buitenraam | Relevant | Bevestigd |
+| W7 | 1.00 m | 0.40 m | 1.60 m | 1 | Buitenraam | Relevant | Bevestigd |
 
 #### Deurtypen
 
 Bronbladen: `11.A06-01.pdf` voor D1 t/m D4, `3.A03-01.pdf` voor controle buiten-/binnendeuren en `5.A04-01.pdf` voor de entreepartij D1.
 
-| Type | Breedte | Hoogte | Aantal | Type/functie | Eerste buitenmodelscope | Status |
-|---|---:|---:|---:|---|---|---|
-| D1 | 2.80 m | 2.00 m | 1 | Buitendeur/entreepartij | Relevant | Bevestigd |
-| D2 | 0.80 m | 2.00 m | 3 | Binnendeur | Niet relevant | Bevestigd |
-| D3 | 0.70 m | 2.00 m | 1 | Binnendeur | Niet relevant | Bevestigd |
-| D4 | 0.80 m | 2.00 m | 2 | Buitendeur | Relevant | Bevestigd |
+| Type | Breedte | Hoogte | Totaal aantal | Verdeling/functie | Buitenaantal eerste buitenmodelscope | Status |
+|---|---:|---:|---:|---|---:|---|
+| D1 | 2.80 m | 2.00 m | 1 | Externe entreepartij | 1 | Bevestigd |
+| D2 | 0.80 m | 2.00 m | 3 | Binnendeur | 0 | Bevestigd |
+| D3 | 0.70 m | 2.00 m | 1 | Binnendeur | 0 | Bevestigd |
+| D4 | 0.80 m | 2.00 m | 2 | 1 externe D4 bij keuken/servicezone; 1 interne D4 tussen keuken en eetruimte | 1 | Bevestigd |
 
 - Bevestigd op `3.A03-01.pdf`: D2 en D3 zijn binnendeuren en worden niet meegenomen als buitenopeningen in de eerste buitenmodelscope.
 - Bevestigd op `3.A03-01.pdf` en `5.A04-01.pdf`: D1 is de entreepartij aan de oostelijke voorgevel en is relevant voor het buitenmodel.
-- Bevestigd op `3.A03-01.pdf`: D4 is een buitendeurtype en is relevant voor het buitenmodel.
+- Bevestigd op `3.A03-01.pdf`: van type D4 is alleen de D4 bij de keuken/servicezone een buitenopening voor de eerste buitenmodelscope; de andere D4 is intern tussen keuken en eetruimte.
+- Bevestigd op `3.A03-01.pdf`: W4 is een interne opening tussen keuken en eetruimte en valt buiten de eerste buitenmodelscope.
 - Nog aan te leveren of verder uit te werken: exacte plaatsing per gevel van alle buitenramen en buitendeuren in machineleesbare configuratie.
+
+#### Buitenopeningenmatrix
+
+| Gevel | Buitenopening | Asvak | Aangrenzende ruimte | Bevestiging | Offset binnen asvak |
+|---|---|---|---|---|---|
+| Oost/gevel 1 | W1 | 1-2 | Woonkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Oost/gevel 1 | D1 | 2-3 | Entree | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Oost/gevel 1 | W1 | 3-4 | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Zuid/gevel 2 | D4 extern | A-B | Keuken/servicezone | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Zuid/gevel 2 | W5 | B-C | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Zuid/gevel 2 | W5 | B-C | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Zuid/gevel 2 | W2 | C-D | Eetruimte | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Zuid/gevel 2 | W2 | D-E | Woonkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| West/gevel 3 | W6 | 1-2 | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| West/gevel 3 | W1 | 2-3 | Slaapkamer 3 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| West/gevel 3 | W1 | 3-4 | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Noord/gevel 4 | W3 | B-C | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Noord/gevel 4 | W3 | B-C | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Noord/gevel 4 | W7 | C-D | Badkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Noord/gevel 4 | W3 | D-E | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Noord/gevel 4 | W3 | D-E | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
 
 ### Trappen en doorloopmaten
 
