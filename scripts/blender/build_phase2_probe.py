@@ -302,12 +302,60 @@ def resolve_child_path(out_root, relative_path, label):
 def resolve_output_paths(out_dir, output_config):
     out_root = Path(out_dir).resolve()
     blend_path = resolve_child_path(out_root, output_config["blend"], "output.blend")
-    glb_path = resolve_child_path(out_root, "export/house.glb", "output.glb")
+    glb_path = resolve_child_path(out_root, output_config["glb"], "output.glb")
     render_paths = {
         view: resolve_child_path(out_root, output_config["renders"][view], f"output.renders.{view}")
         for view in ("front", "back", "left", "right")
     }
-    return out_root, blend_path, glb_path, render_paths
+    validation_path = resolve_child_path(out_root, "validation.json", "validation report")
+    return out_root, blend_path, glb_path, render_paths, validation_path
+
+
+def path_for_report(out_root, path):
+    return path.relative_to(out_root).as_posix()
+
+
+def validate_output_files(out_root, blend_path, glb_path, render_paths):
+    required_outputs = [
+        ("house.blend", blend_path),
+        ("house.glb", glb_path),
+        ("front.png", render_paths["front"]),
+        ("back.png", render_paths["back"]),
+        ("left.png", render_paths["left"]),
+        ("right.png", render_paths["right"]),
+    ]
+    checks = []
+
+    for label, path in required_outputs:
+        exists = path.is_file()
+        size_bytes = path.stat().st_size if exists else 0
+        passed = exists and size_bytes > 0
+        checks.append(
+            {
+                "label": label,
+                "path": path_for_report(out_root, path),
+                "exists": exists,
+                "sizeBytes": size_bytes,
+                "passed": passed,
+            }
+        )
+
+    return {
+        "schemaVersion": 1,
+        "status": "passed" if all(check["passed"] for check in checks) else "failed",
+        "checks": checks,
+    }
+
+
+def write_validation_report(validation_path, report):
+    validation_path.parent.mkdir(parents=True, exist_ok=True)
+    with validation_path.open("w", encoding="utf-8", newline="\n") as handle:
+        json.dump(report, handle, indent=2)
+        handle.write("\n")
+
+    if report["status"] != "passed":
+        failed_labels = ", ".join(check["label"] for check in report["checks"] if not check["passed"])
+        raise RuntimeError(f"Outputvalidatie mislukt voor: {failed_labels}")
 
 
 def look_at(obj, target):
@@ -535,7 +583,7 @@ def export_glb(glb_path):
 
 def build_scene(config, out_dir):
     dims = validate_config(config)
-    out_root, blend_path, glb_path, render_paths = resolve_output_paths(out_dir, config["output"])
+    out_root, blend_path, glb_path, render_paths, validation_path = resolve_output_paths(out_dir, config["output"])
 
     clear_scene()
     bpy.context.scene.unit_settings.system = "METRIC"
@@ -594,7 +642,10 @@ def build_scene(config, out_dir):
 
     blend_path.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(blend_path))
+    validation_report = validate_output_files(out_root, blend_path, glb_path, render_paths)
+    write_validation_report(validation_path, validation_report)
     print(f"Saved Phase 2 probe blend: {blend_path}")
+    print(f"Saved Phase 2 validation report: {validation_path}")
 
 
 def main():
