@@ -302,11 +302,12 @@ def resolve_child_path(out_root, relative_path, label):
 def resolve_output_paths(out_dir, output_config):
     out_root = Path(out_dir).resolve()
     blend_path = resolve_child_path(out_root, output_config["blend"], "output.blend")
+    glb_path = resolve_child_path(out_root, "export/house.glb", "output.glb")
     render_paths = {
         view: resolve_child_path(out_root, output_config["renders"][view], f"output.renders.{view}")
         for view in ("front", "back", "left", "right")
     }
-    return out_root, blend_path, render_paths
+    return out_root, blend_path, glb_path, render_paths
 
 
 def look_at(obj, target):
@@ -519,9 +520,22 @@ def render_views(cameras, render_paths):
             raise RuntimeError(f"Render is leeg: {render_path}")
 
 
+def export_glb(glb_path):
+    glb_path.parent.mkdir(parents=True, exist_ok=True)
+    bpy.ops.export_scene.gltf(
+        filepath=str(glb_path),
+        export_format="GLB",
+    )
+
+    if not glb_path.is_file():
+        raise RuntimeError(f"GLB-export ontbreekt: {glb_path}")
+    if glb_path.stat().st_size <= 0:
+        raise RuntimeError(f"GLB-export is leeg: {glb_path}")
+
+
 def build_scene(config, out_dir):
     dims = validate_config(config)
-    out_root, blend_path, render_paths = resolve_output_paths(out_dir, config["output"])
+    out_root, blend_path, glb_path, render_paths = resolve_output_paths(out_dir, config["output"])
 
     clear_scene()
     bpy.context.scene.unit_settings.system = "METRIC"
@@ -576,6 +590,7 @@ def build_scene(config, out_dir):
     cameras = add_cameras(dims, cameras_collection)
     add_lighting(dims, lighting_collection)
     render_views(cameras, render_paths)
+    export_glb(glb_path)
 
     blend_path.parent.mkdir(parents=True, exist_ok=True)
     bpy.ops.wm.save_as_mainfile(filepath=str(blend_path))
