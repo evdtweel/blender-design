@@ -99,7 +99,7 @@ Acceptatie:
 - [ ] Dakvorm, overstekken en hemelwaterafvoer beschrijven.
 - [ ] Referentiebeelden en tekeningen registreren met bron/status.
 - [ ] Onzekerheden en expliciete aannames vastleggen.
-- [ ] Configuratieschema valideren.
+- [x] Configuratieschema valideren.
 
 Acceptatie:
 
