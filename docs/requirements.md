@@ -14,13 +14,29 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Bekend: het resultaat moet als `.blend` bewerkbaar en als `.glb` interactief deelbaar zijn.
 - Door Edward bevestigd: het te modelleren object is een bestaand huis in Songkhla.
 - Door Edward bevestigd: het huis is gebouwd volgens de aangeleverde bouwtekeningen.
+- Door Edward bevestigd: het Blender-model dient als geometrisch betrouwbare basis voor een toekomstig verbouwingsontwerp.
 - Nog aan te leveren door Edward: verdere doelgroep en gebruikers van het 3D-prototype.
 
 ### Kijk- en publicatiedoel
 
 - Bekend: het prototype moet interactief deelbaar zijn.
+- Door Edward bevestigd: geometrische juistheid heeft nu voorrang op fotorealisme.
 - Nog aan te leveren door Edward: gewenste kijkervaring.
 - Nog aan te leveren door Edward: gewenst publicatiedoel.
+
+### Eerste buitenmodelscope
+
+- Door Edward bevestigd: de eerste modelscope omvat uitsluitend de bestaande buitengeometrie.
+- Door Edward bevestigd: binnenmuren, ruimtes en interieur worden in een latere stap uitgewerkt.
+- Door Edward bevestigd: de bouwtekeningen zijn leidend voor geometrie.
+- Door Edward bevestigd: latere actuele foto's zijn alleen nodig voor materiaal- en detailverificatie.
+- Minimaal over te nemen: perceeloriëntatie.
+- Minimaal over te nemen: verhoogd vloerniveau.
+- Minimaal over te nemen: hoofdvorm en buitenwanden.
+- Minimaal over te nemen: alle buitenramen en buitendeuren volgens de tekeningen.
+- Minimaal over te nemen: voorveranda en overige buitenplatforms.
+- Minimaal over te nemen: buitentrappen.
+- Minimaal over te nemen: dakvolumes, dakhellingen en overstekken.
 
 ### Locatie en noordrichting
 
@@ -85,6 +101,9 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 ### Materialen en stijl
 
+- Door Edward bevestigd: de eerste materiaal- en kleurweergave blijft bewust eenvoudig en neutraal.
+- Door Edward bevestigd: geometrische juistheid heeft nu voorrang op fotorealisme.
+- Door Edward bevestigd: latere actuele foto's zijn alleen nodig voor materiaal- en detailverificatie.
 - Nog aan te leveren door Edward: gewenste materialen.
 - Nog aan te leveren door Edward: gewenste stijl.
 - Nog aan te leveren door Edward: referenties voor gevels, dak, kozijnen, interieur of terrein.
@@ -106,6 +125,9 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Bekend: relatieve projectpaden gebruiken; persoonlijke absolute paden worden niet gecommit.
 - Bekend: gegenereerde uitvoer blijft gescheiden van configuratie, scripts en documentatie.
 - Door Edward bevestigd: het definitieve model moet het bestaande huis in Songkhla volgen zoals gebouwd volgens de aangeleverde bouwtekeningen.
+- Door Edward bevestigd: de eerste modelscope omvat uitsluitend de bestaande buitengeometrie.
+- Door Edward bevestigd: de bouwtekeningen zijn leidend voor geometrie.
+- Door Edward bevestigd: geometrische juistheid heeft nu voorrang op fotorealisme.
 - Bekend: originele bronbestanden met persoonsgegevens in titelblokken worden voorlopig niet in Git opgenomen.
 - Nog aan te leveren door Edward: harde ontwerp-, maatvoerings-, perceel- en publicatie-eisen voor het definitieve huis.
 
@@ -115,6 +137,7 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Bekend: buiten scope zonder apart besluit zijn constructieberekeningen, vergunningsstukken, gecertificeerd BIM/IFC-model, gedetailleerde installatietechniek, kostenraming en bouwoffertes.
 - Bekend: de tijdelijke Fase 2-proefwoning is geen definitief huisontwerp.
 - Bekend: Fase 2-proefmaten worden niet gebruikt als definitieve eisen.
+- Door Edward bevestigd: binnenmuren, ruimtes en interieur vallen buiten de eerste buitenmodelscope en worden later uitgewerkt.
 - Nog aan te leveren door Edward: welke ontbrekende gegevens tijdelijk als aanname mogen worden behandeld.
 
 ### Open vragen
@@ -129,7 +152,7 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Nog aan te leveren door Edward: exacte plaatsing, afmetingen, draairichting en type van ramen en deuren.
 - Nog aan te leveren door Edward: exacte trappen, doorloopmaten, vrije hoogtes en trapbreedtes.
 - Nog aan te leveren door Edward: hemelwaterafvoer, nokrichtingen, dakvlakken, goten, regenpijpen en dakdetails.
-- Nog aan te leveren door Edward: gewenste materialen en stijl.
+- Nog aan te leveren door Edward: materiaal- en stijldetails voor latere materiaal- en detailverificatie.
 - Nog aan te leveren door Edward: geanonimiseerde bronbestanden of toestemming voor opname van opgeschoonde referenties in Git.
 
 ## Kwaliteitskenmerken
