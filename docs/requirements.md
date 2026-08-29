@@ -122,24 +122,33 @@ Bronbladen: `11.A06-01.pdf` voor D1 t/m D4, `3.A03-01.pdf` voor controle buiten-
 
 #### Buitenopeningenmatrix
 
-| Gevel | Buitenopening | Asvak | Aangrenzende ruimte | Bevestiging | Offset binnen asvak |
+Tijdelijke plaatsingsregel voor het eerste eenvoudige buitenmodel, goedgekeurd door Edward:
+
+- Een enkel raam of een enkele deur binnen een bevestigd asvak krijgt het hart op 50% van de asvaklengte.
+- Twee ramen binnen hetzelfde asvak krijgen hun harten op 25% en 75% van de asvaklengte.
+- De plaatsing is daarmee symmetrisch rond het midden van het asvak.
+- Deze regels gelden alleen wanneer geen rechtstreeks bemate offset beschikbaar is.
+- De posities zijn expliciete tijdelijke aannames voor het eerste buitenmodel en mogen later worden vervangen door actuele inmetingen of aanvullende betrouwbare maatvoering.
+- Typeafmetingen, borstweringen, gevel, asvak en aangrenzende ruimte blijven de eerder bevestigde waarden.
+
+| Gevel | Buitenopening | Asvak | Aangrenzende ruimte | Bevestiging | Tijdelijke plaatsing eerste buitenmodel |
 |---|---|---|---|---|---|
-| Oost/gevel 1 | W1 | 1-2 | Woonkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Oost/gevel 1 | D1 | 2-3 | Entree | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Oost/gevel 1 | W1 | 3-4 | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Zuid/gevel 2 | D4 extern | A-B | Keuken/servicezone | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Zuid/gevel 2 | W5 | B-C | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Zuid/gevel 2 | W5 | B-C | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Zuid/gevel 2 | W2 | C-D | Eetruimte | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Zuid/gevel 2 | W2 | D-E | Woonkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| West/gevel 3 | W6 | 1-2 | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| West/gevel 3 | W1 | 2-3 | Slaapkamer 3 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| West/gevel 3 | W1 | 3-4 | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Noord/gevel 4 | W3 | B-C | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Noord/gevel 4 | W3 | B-C | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Noord/gevel 4 | W7 | C-D | Badkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Noord/gevel 4 | W3 | D-E | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
-| Noord/gevel 4 | W3 | D-E | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Nog niet bemaat; eventueel alleen visueel gecentreerd |
+| Oost/gevel 1 | W1 | 1-2 | Woonkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| Oost/gevel 1 | D1 | 2-3 | Entree | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| Oost/gevel 1 | W1 | 3-4 | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| Zuid/gevel 2 | D4 extern | A-B | Keuken/servicezone | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| Zuid/gevel 2 | W5 | B-C | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Westelijke W5: hart op 25% van de asvaklengte |
+| Zuid/gevel 2 | W5 | B-C | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Oostelijke W5: hart op 75% van de asvaklengte |
+| Zuid/gevel 2 | W2 | C-D | Eetruimte | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| Zuid/gevel 2 | W2 | D-E | Woonkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| West/gevel 3 | W6 | 1-2 | Keuken | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| West/gevel 3 | W1 | 2-3 | Slaapkamer 3 | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| West/gevel 3 | W1 | 3-4 | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| Noord/gevel 4 | W3 | B-C | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Westelijke W3: hart op 25% van de asvaklengte |
+| Noord/gevel 4 | W3 | B-C | Slaapkamer 2 | Gevel, asvak en aangrenzende ruimte bevestigd | Oostelijke W3: hart op 75% van de asvaklengte |
+| Noord/gevel 4 | W7 | C-D | Badkamer | Gevel, asvak en aangrenzende ruimte bevestigd | Hart op 50% van de asvaklengte |
+| Noord/gevel 4 | W3 | D-E | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Westelijke W3: hart op 25% van de asvaklengte |
+| Noord/gevel 4 | W3 | D-E | Slaapkamer 1 | Gevel, asvak en aangrenzende ruimte bevestigd | Oostelijke W3: hart op 75% van de asvaklengte |
 
 ### Trappen en doorloopmaten
 
@@ -207,7 +216,8 @@ Bronbladen: `11.A06-01.pdf` voor D1 t/m D4, `3.A03-01.pdf` voor controle buiten-
 - Nog aan te leveren door Edward: overige niveaus en exacte peilmaten indien nodig voor detaillering.
 - Nog aan te leveren door Edward: gewenste netto-oppervlakten.
 - Nog aan te leveren door Edward: wand-, vloer- en dakdiktes.
-- Nog aan te leveren door Edward: exacte plaatsing per gevel en draairichting van ramen en buitendeuren voor machineleesbare configuratie.
+- Tijdelijk opgelost voor het eerste buitenmodel: ontbrekende offsets van buitenopeningen binnen bevestigde asvakken volgens de tijdelijke plaatsingsregel; later te verifieren of te vervangen door actuele inmetingen of aanvullende betrouwbare maatvoering.
+- Nog aan te leveren door Edward: draairichting van ramen en buitendeuren voor machineleesbare configuratie.
 - Nog aan te leveren door Edward: exacte trappen, doorloopmaten, vrije hoogtes en trapbreedtes.
 - Nog aan te leveren door Edward: hemelwaterafvoer, nokrichtingen, dakvlakken, goten, regenpijpen en dakdetails.
 - Nog aan te leveren door Edward: materiaal- en stijldetails voor latere materiaal- en detailverificatie.
