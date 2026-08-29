@@ -12,7 +12,9 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 - Bekend: het projectdoel is een reproduceerbaar, parametrisch en maatvast 3D-prototype van een huis.
 - Bekend: het resultaat moet als `.blend` bewerkbaar en als `.glb` interactief deelbaar zijn.
-- Nog aan te leveren door Edward: doel en gebruikers van het huis.
+- Door Edward bevestigd: het te modelleren object is een bestaand huis in Songkhla.
+- Door Edward bevestigd: het huis is gebouwd volgens de aangeleverde bouwtekeningen.
+- Nog aan te leveren door Edward: verdere doelgroep en gebruikers van het 3D-prototype.
 
 ### Kijk- en publicatiedoel
 
@@ -22,31 +24,36 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 ### Locatie en noordrichting
 
-- Nog aan te leveren door Edward: locatie.
-- Nog aan te leveren door Edward: noordrichting.
+- Door Edward bevestigd: het bestaande huis staat in Songkhla.
+- Door Edward bevestigd: voorgevel en openbare weg liggen aan de oostzijde.
+- Door Edward bevestigd: de achterzijde ligt aan de westzijde.
+- Door Edward bevestigd: de noordzijde ligt rechts op de plattegrond.
 - Nog aan te leveren door Edward: eventuele situatiegegevens die invloed hebben op oriëntatie, zichtlijnen of plaatsing.
 
 ### Perceel
 
-- Nog aan te leveren door Edward: perceelgegevens.
+- Rechtstreeks afgelezen tekeningmaat: perceel circa 13,00 meter noord-zuid bij 40,00 meter oost-west.
 - Nog aan te leveren door Edward: perceelsgrenzen, rooilijnen, bouwvlak of andere randvoorwaarden.
-- Nog aan te leveren door Edward: situatietekening of perceelschets, indien beschikbaar.
+- Nog aan te leveren door Edward: definitieve perceelmaat en juridische perceelgegevens indien die afwijken van de aangeleverde tekeningset.
 
 ### Buitenmaten en bouwvolume
 
-- Nog aan te leveren door Edward: buitenmaten.
-- Nog aan te leveren door Edward: maximaal bouwvolume.
+- Rechtstreeks afgelezen tekeningmaat: structureel hoofdraster woning circa 10,50 meter noord-zuid bij 16,00 meter oost-west.
+- Rechtstreeks afgelezen tekeningmaat: nokniveau volgens doorsnede circa +4,85 meter.
 - Nog aan te leveren door Edward: maximale bouwhoogte of andere volumegrenzen.
+- Nog aan te leveren door Edward: definitieve buitenwerkse gevelmaten wanneer die afwijken van het structurele hoofdraster.
 
 ### Verdiepingen en niveaus
 
-- Nog aan te leveren door Edward: aantal verdiepingen.
-- Nog aan te leveren door Edward: niveaus.
-- Nog aan te leveren door Edward: verdiepingshoogtes.
+- Door Edward bevestigd: één verhoogde bouwlaag.
+- Rechtstreeks afgelezen tekeningmaat: hoofdvloerniveau circa +1,50 meter boven maaiveld.
+- Rechtstreeks afgelezen tekeningmaat: nokniveau volgens doorsnede circa +4,85 meter.
+- Nog aan te leveren door Edward: overige niveaus en exacte peilmaten indien nodig voor detaillering.
 
 ### Ruimtelijst en netto-oppervlakten
 
-- Nog aan te leveren door Edward: ruimtelijst.
+- Door Edward bevestigd: drie slaapkamers.
+- Door Edward bevestigd: keuken, eetruimte, woonkamer/ontvangstruimte, centrale hal, één badkamer, voorveranda, was-/achterruimte en buitentrappen.
 - Nog aan te leveren door Edward: gewenste netto-oppervlakten per ruimte.
 - Nog aan te leveren door Edward: gewenste relaties tussen ruimten, looproutes of zonering.
 
@@ -58,22 +65,23 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 ### Ramen en deuren
 
-- Nog aan te leveren door Edward: gewenste ramen.
-- Nog aan te leveren door Edward: gewenste deuren.
+- Door Edward bevestigd: ramen en deuren moeten worden gebaseerd op de aangeleverde bouwtekeningen.
 - Nog aan te leveren door Edward: plaatsing, afmetingen, draairichting en type van ramen en deuren.
 
 ### Trappen en doorloopmaten
 
-- Nog aan te leveren door Edward: gewenste trappen.
+- Door Edward bevestigd: buitentrappen zijn onderdeel van het huis.
 - Nog aan te leveren door Edward: doorloopmaten.
 - Nog aan te leveren door Edward: vrije hoogtes, trapbreedtes of andere maatgevende eisen.
 
 ### Dak en hemelwaterafvoer
 
-- Nog aan te leveren door Edward: dakvorm.
-- Nog aan te leveren door Edward: overstekken.
+- Door Edward bevestigd: samengesteld hellend dak.
+- Rechtstreeks afgelezen tekeningmaat: dakhelling circa 35 graden.
+- Rechtstreeks afgelezen tekeningmaat: dakoverstek circa 1,00 meter.
+- Rechtstreeks afgelezen tekeningmaat: nokniveau volgens doorsnede circa +4,85 meter.
 - Nog aan te leveren door Edward: hemelwaterafvoer.
-- Nog aan te leveren door Edward: dakhelling, nokrichting en dakdetails indien relevant.
+- Nog aan te leveren door Edward: nokrichtingen, dakvlakken, goten, regenpijpen en dakdetails.
 
 ### Materialen en stijl
 
@@ -83,12 +91,12 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 
 ### Referentiebestanden
 
-- Nog aan te leveren door Edward: plattegronden, schetsen of tekeningen met maatvoering.
-- Nog aan te leveren door Edward: situatietekening of perceelschets met noordpijl.
-- Nog aan te leveren door Edward: foto's van bestaande locatie of gewenste referenties.
-- Nog aan te leveren door Edward: referentiebeelden voor stijl, gevels, ramen, deuren, dak en materiaalrichting.
-- Nog aan te leveren door Edward: eventuele PDF's, screenshots, scans of CAD/BIM-exporten.
-- Nog aan te leveren door Edward: bron en status per referentiebestand.
+- Externe bronset buiten Git: `fwdsongkhlahouseplan (1).zip`.
+- Door Edward bevestigd: deze bronset bevat 19 PDF-bouw- en constructietekeningen, één SketchUp-model, twee exterieurreferentiebeelden en zes badkamerbeelden.
+- Door Edward bevestigd: het huis is volgens deze tekeningen gebouwd.
+- Bekend: de originele bronbestanden worden wegens persoonsgegevens in titelblokken voorlopig niet in Git opgenomen.
+- Nog aan te leveren door Edward: opgeschoonde of geanonimiseerde bronbestanden als deze later wel in Git mogen worden opgenomen.
+- Nog aan te leveren door Edward: bron/status per afzonderlijk referentiebestand wanneer de externe bronset verder wordt uitgesplitst.
 
 ### Harde eisen
 
@@ -97,6 +105,8 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Bekend: gebruikersdocumentatie gebruikt millimeters waar passend.
 - Bekend: relatieve projectpaden gebruiken; persoonlijke absolute paden worden niet gecommit.
 - Bekend: gegenereerde uitvoer blijft gescheiden van configuratie, scripts en documentatie.
+- Door Edward bevestigd: het definitieve model moet het bestaande huis in Songkhla volgen zoals gebouwd volgens de aangeleverde bouwtekeningen.
+- Bekend: originele bronbestanden met persoonsgegevens in titelblokken worden voorlopig niet in Git opgenomen.
 - Nog aan te leveren door Edward: harde ontwerp-, maatvoerings-, perceel- en publicatie-eisen voor het definitieve huis.
 
 ### Aannames
@@ -104,21 +114,23 @@ Deze inventarisatie vormt de basis voor Fase 3. De tijdelijke Fase 2-proefwoning
 - Bekend: het prototype is geen constructieberekening, vergunningstekening of gecertificeerd BIM-model.
 - Bekend: buiten scope zonder apart besluit zijn constructieberekeningen, vergunningsstukken, gecertificeerd BIM/IFC-model, gedetailleerde installatietechniek, kostenraming en bouwoffertes.
 - Bekend: de tijdelijke Fase 2-proefwoning is geen definitief huisontwerp.
+- Bekend: Fase 2-proefmaten worden niet gebruikt als definitieve eisen.
 - Nog aan te leveren door Edward: welke ontbrekende gegevens tijdelijk als aanname mogen worden behandeld.
 
 ### Open vragen
 
-- Nog aan te leveren door Edward: doel en gebruikers van het huis.
+- Nog aan te leveren door Edward: verdere doelgroep en gebruikers van het 3D-prototype.
 - Nog aan te leveren door Edward: gewenste kijkervaring en publicatiedoel.
-- Nog aan te leveren door Edward: locatie, perceel en oriëntatie/noordrichting.
-- Nog aan te leveren door Edward: buitenmaten en maximaal bouwvolume.
-- Nog aan te leveren door Edward: aantal verdiepingen, niveaus en verdiepingshoogtes.
-- Nog aan te leveren door Edward: ruimtelijst en gewenste netto-oppervlakten.
+- Nog aan te leveren door Edward: definitieve perceelmaat en eventuele juridische perceelrandvoorwaarden.
+- Nog aan te leveren door Edward: exacte buitenwerkse gevelmaten wanneer die afwijken van het structurele hoofdraster.
+- Nog aan te leveren door Edward: overige niveaus en exacte peilmaten indien nodig voor detaillering.
+- Nog aan te leveren door Edward: gewenste netto-oppervlakten.
 - Nog aan te leveren door Edward: wand-, vloer- en dakdiktes.
-- Nog aan te leveren door Edward: ramen, deuren, trappen en doorloopmaten.
-- Nog aan te leveren door Edward: dakvorm, overstekken en hemelwaterafvoer.
+- Nog aan te leveren door Edward: exacte plaatsing, afmetingen, draairichting en type van ramen en deuren.
+- Nog aan te leveren door Edward: exacte trappen, doorloopmaten, vrije hoogtes en trapbreedtes.
+- Nog aan te leveren door Edward: hemelwaterafvoer, nokrichtingen, dakvlakken, goten, regenpijpen en dakdetails.
 - Nog aan te leveren door Edward: gewenste materialen en stijl.
-- Nog aan te leveren door Edward: plattegronden, schetsen of referentiebeelden.
+- Nog aan te leveren door Edward: geanonimiseerde bronbestanden of toestemming voor opname van opgeschoonde referenties in Git.
 
 ## Kwaliteitskenmerken
 
