@@ -1,16 +1,21 @@
 # Projectstatus
 
 Laatste update: 29 augustus 2026
-Huidige fase: Fase 2 — Verticale Blender-proefopstelling
-Algemene status: Gereed voor ontwerp
+Huidige fase: Fase 3 — Eisen, referenties en maatvoering
+Algemene status: Fase 2 voltooid en goedgekeurd
 
 ## Afgerond
 
 - Fase 0 — Projectbesturing en uitgangspunten afgerond.
 - Fase 1 — Lokale omgeving en Git/GitHub afgerond.
+- Fase 2 — Verticale Blender-proefopstelling afgerond en goedgekeurd op 29 augustus 2026.
+- M1 — IntelliJ → Blender automatisering werkt voltooid op 29 augustus 2026.
 - Fase 2-ontwerpanalyse uitgevoerd.
 - DEC-005 goedgekeurd voor commandoketen, proefwoning en outputbeleid.
-- M1 blijft in uitvoering tot een succesvolle gevalideerde headless end-to-end-uitvoering.
+- Succesvolle gevalideerde headless end-to-end-uitvoering met Blender 5.2.1 LTS uitgevoerd.
+- Werkende Fase 2-build levert `out/phase2/blender/house.blend`, `out/phase2/exports/house.glb`, vier controlerenders, `out/phase2/reports/validation.json` met status `passed` en `out/phase2/logs/build.log`.
+- Fase 2-plan voltooid in commit `725dbf8`.
+- Fase 2-buildlog vastgelegd in commit `cba4e56`.
 - Gegenereerde uitvoer onder `/out/` wordt genegeerd.
 - Projectbesturing ingericht.
 - `AGENTS.md` actief.
@@ -37,7 +42,7 @@ Algemene status: Gereed voor ontwerp
 
 ## Actief
 
-- Fase 2 voorbereiden voor implementatie van de verticale Blender-proefopstelling.
+- Fase 3 voorbereiden voor eisen, referenties en maatvoering.
 
 ## Geblokkeerd
 
@@ -52,11 +57,11 @@ Algemene status: Gereed voor ontwerp
 
 ## Besluiten nodig
 
-- Geen besluit nodig voor de actieve administratieve voorbereiding.
+- Fase 3 vereist nog goedgekeurde eisen, referenties en maatvoering.
 
 ## Eerstvolgende Codex-opdracht
 
-Maak de minimale Fase 2-projectstructuur, proefconfiguratie en commandowrapper volgens DEC-005, zonder Blender-uitvoer te genereren.
+Start Fase 3 met het verzamelen en vastleggen van eisen, referenties en maatvoering, zonder Fase 3 al als voltooid te markeren.
 
 ## Bewijs voor afronding
 
@@ -67,4 +72,4 @@ Maak de minimale Fase 2-projectstructuur, proefconfiguratie en commandowrapper v
 
 ## Huidige fase
 
-Fase 2 — Verticale Blender-proefopstelling.
+Fase 3 — Eisen, referenties en maatvoering.
