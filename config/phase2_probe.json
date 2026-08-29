@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "metadata": {
+    "name": "phase2_probe",
+    "description": "Technical Phase 2 test data for the Blender build pipeline; this is not a final house design.",
+    "decision": "DEC-005",
+    "status": "approved temporary test data"
+  },
+  "units": "meters",
+  "building": {
+    "width": 8.0,
+    "depth": 6.0,
+    "wallHeight": 2.8,
+    "wallThickness": 0.2
+  },
+  "door": {
+    "id": "front_door_center",
+    "wall": "front",
+    "horizontalOffset": 0.0,
+    "width": 0.9,
+    "height": 2.1
+  },
+  "windows": [
+    {
+      "id": "front_window_left",
+      "wall": "front",
+      "horizontalOffset": -2.0,
+      "width": 1.2,
+      "height": 1.2,
+      "sillHeight": 0.9
+    },
+    {
+      "id": "front_window_right",
+      "wall": "front",
+      "horizontalOffset": 2.0,
+      "width": 1.2,
+      "height": 1.2,
+      "sillHeight": 0.9
+    },
+    {
+      "id": "back_window_left",
+      "wall": "back",
+      "horizontalOffset": -2.0,
+      "width": 1.2,
+      "height": 1.2,
+      "sillHeight": 0.9
+    },
+    {
+      "id": "back_window_right",
+      "wall": "back",
+      "horizontalOffset": 2.0,
+      "width": 1.2,
+      "height": 1.2,
+      "sillHeight": 0.9
+    }
+  ],
+  "interiorWall": {
+    "orientation": "parallel_to_width",
+    "position": "center",
+    "thickness": 0.2,
+    "height": 2.8
+  },
+  "roof": {
+    "type": "gable",
+    "pitchDegrees": 30.0,
+    "overhang": 0.3
+  },
+  "cameraViews": [
+    {
+      "id": "front",
+      "view": "front"
+    },
+    {
+      "id": "back",
+      "view": "back"
+    },
+    {
+      "id": "left",
+      "view": "left"
+    },
+    {
+      "id": "right",
+      "view": "right"
+    }
+  ],
+  "output": {
+    "blend": "blender/house.blend",
+    "glb": "exports/house.glb",
+    "renders": {
+      "front": "renders/front.png",
+      "back": "renders/back.png",
+      "left": "renders/left.png",
+      "right": "renders/right.png"
+    },
+    "validationReport": "reports/validation.json",
+    "buildLog": "logs/build.log"
+  }
+}
