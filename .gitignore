@@ -27,6 +27,7 @@ __pycache__/
 ~$*
 
 # Local environment, secrets, and machine-specific config
+/local_sources/
 .env
 .env.*
 *.local
