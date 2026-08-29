@@ -1,0 +1,566 @@
+{
+  "schemaVersion": "0.1.0",
+  "metadata": {
+    "project": "blender_design",
+    "model": "songkhla_exterior",
+    "title": "First simple Songkhla exterior model",
+    "status": "draft",
+    "createdDate": "2026-08-29",
+    "scope": "first_simple_exterior_model",
+    "description": "Machine-readable configuration for the first simple exterior model of the existing Songkhla house.",
+    "sourcePolicy": {
+      "primaryRequirements": "docs/requirements.md",
+      "noPhase2ProbeDimensions": true,
+      "noPersonalAbsolutePaths": true,
+      "unconfirmedValuesUseNull": true
+    }
+  },
+  "units": {
+    "length": "m",
+    "angle": "degree"
+  },
+  "coordinateSystem": {
+    "xPositive": "east",
+    "yPositive": "north",
+    "zPositive": "up",
+    "frontFacade": "east"
+  },
+  "sourceReferences": [
+    {
+      "id": "requirements",
+      "path": "docs/requirements.md",
+      "contains": [
+        "confirmed exterior scope",
+        "orientation",
+        "plot dimensions",
+        "levels",
+        "roof constraints",
+        "window and door types",
+        "exterior opening matrix",
+        "temporary opening placement rules",
+        "closed opening scope",
+        "neutral presentation"
+      ]
+    },
+    {
+      "id": "local_plan_set",
+      "path": "local_sources/songkhla_house/extracted/nested_zip/plan",
+      "contains": [
+        "local drawing set references only"
+      ]
+    },
+    {
+      "id": "plan_3_A03_01",
+      "path": "local_sources/songkhla_house/extracted/nested_zip/plan/3.A03-01.pdf",
+      "contains": [
+        "exterior opening matrix",
+        "D4 and W4 internal/external verification"
+      ]
+    },
+    {
+      "id": "plan_5_A04_01",
+      "path": "local_sources/songkhla_house/extracted/nested_zip/plan/5.A04-01.pdf",
+      "contains": [
+        "D1 east entrance reference",
+        "roof level reference"
+      ]
+    },
+    {
+      "id": "plans_5_to_8_and_10",
+      "path": "local_sources/songkhla_house/extracted/nested_zip/plan",
+      "files": [
+        "5.A04-01.pdf",
+        "6.A04-02.pdf",
+        "7.A04-03.pdf",
+        "8.A04-04.pdf",
+        "10.A05-02.pdf"
+      ],
+      "contains": [
+        "provisional ridge level +4.85 m"
+      ]
+    },
+    {
+      "id": "plan_11_A06_01",
+      "path": "local_sources/songkhla_house/extracted/nested_zip/plan/11.A06-01.pdf",
+      "contains": [
+        "W1 to W4 and D1 to D4 type dimensions"
+      ]
+    },
+    {
+      "id": "plan_12_A06_02",
+      "path": "local_sources/songkhla_house/extracted/nested_zip/plan/12.A06-02.pdf",
+      "contains": [
+        "W5 to W7 type dimensions"
+      ]
+    }
+  ],
+  "site": {
+    "locationName": "Songkhla",
+    "plot": {
+      "northSouthLength": {
+        "value": 13.0,
+        "sourceStatus": "confirmed_in_requirements"
+      },
+      "eastWestLength": {
+        "value": 40.0,
+        "sourceStatus": "confirmed_in_requirements"
+      }
+    }
+  },
+  "buildingGrid": {
+    "axes1To4": {
+      "direction": "south_to_north",
+      "coordinate": "y",
+      "segments": [
+        {
+          "from": "1",
+          "to": "2",
+          "length": 3.5
+        },
+        {
+          "from": "2",
+          "to": "3",
+          "length": 3.5
+        },
+        {
+          "from": "3",
+          "to": "4",
+          "length": 3.5
+        }
+      ],
+      "axisPositions": {
+        "1": 0.0,
+        "2": 3.5,
+        "3": 7.0,
+        "4": 10.5
+      },
+      "sourceStatus": "confirmed_by_current_task"
+    },
+    "axesAToF": {
+      "direction": "west_to_east",
+      "coordinate": "x",
+      "segments": [
+        {
+          "from": "A",
+          "to": "B",
+          "length": 2.0
+        },
+        {
+          "from": "B",
+          "to": "C",
+          "length": 4.0
+        },
+        {
+          "from": "C",
+          "to": "D",
+          "length": 4.0
+        },
+        {
+          "from": "D",
+          "to": "E",
+          "length": 4.0
+        },
+        {
+          "from": "E",
+          "to": "F",
+          "length": 2.0
+        }
+      ],
+      "axisPositions": {
+        "A": 0.0,
+        "B": 2.0,
+        "C": 6.0,
+        "D": 10.0,
+        "E": 14.0,
+        "F": 16.0
+      },
+      "sourceStatus": "confirmed_by_current_task"
+    }
+  },
+  "levels": {
+    "ground": {
+      "elevation": 0.0,
+      "sourceStatus": "confirmed_by_current_task"
+    },
+    "mainFloor": {
+      "elevation": 1.5,
+      "sourceStatus": "confirmed_in_requirements"
+    },
+    "bathroom": {
+      "elevation": 1.45,
+      "sourceStatus": "confirmed_by_current_task"
+    },
+    "servicePlatform": {
+      "elevation": 1.4,
+      "sourceStatus": "confirmed_by_current_task"
+    },
+    "lowLanding": {
+      "elevation": 0.2,
+      "sourceStatus": "confirmed_by_current_task"
+    }
+  },
+  "facades": {
+    "1": {
+      "name": "east",
+      "orientation": "east",
+      "role": "front"
+    },
+    "2": {
+      "name": "south",
+      "orientation": "south"
+    },
+    "3": {
+      "name": "west",
+      "orientation": "west",
+      "role": "rear"
+    },
+    "4": {
+      "name": "north",
+      "orientation": "north"
+    }
+  },
+  "roof": {
+    "ridgeElevation": {
+      "value": 4.85,
+      "status": "provisional_confirmed"
+    },
+    "slope": {
+      "value": 35.0,
+      "status": "confirmed_in_requirements"
+    },
+    "overhang": {
+      "value": 1.0,
+      "status": "confirmed_in_requirements"
+    },
+    "presentation": "simple_composite_sloped_roof_placeholder"
+  },
+  "openingTypes": {
+    "windows": {
+      "W1": {
+        "width": 2.0,
+        "height": 1.4,
+        "sillHeight": 0.6,
+        "totalCount": 4,
+        "scope": "exterior"
+      },
+      "W2": {
+        "width": 3.0,
+        "height": 1.4,
+        "sillHeight": 0.6,
+        "totalCount": 2,
+        "scope": "exterior"
+      },
+      "W3": {
+        "width": 0.5,
+        "height": 1.4,
+        "sillHeight": 0.6,
+        "totalCount": 4,
+        "scope": "exterior"
+      },
+      "W4": {
+        "width": 1.35,
+        "height": 1.15,
+        "sillHeight": 0.9,
+        "totalCount": 1,
+        "scope": "internal_between_kitchen_and_dining",
+        "firstExteriorModelScope": "excluded"
+      },
+      "W5": {
+        "width": 1.0,
+        "height": 1.1,
+        "sillHeight": 0.9,
+        "totalCount": 2,
+        "scope": "exterior"
+      },
+      "W6": {
+        "width": 1.5,
+        "height": 1.1,
+        "sillHeight": 0.9,
+        "totalCount": 1,
+        "scope": "exterior"
+      },
+      "W7": {
+        "width": 1.0,
+        "height": 0.4,
+        "sillHeight": 1.6,
+        "totalCount": 1,
+        "scope": "exterior"
+      }
+    },
+    "doors": {
+      "D1": {
+        "width": 2.8,
+        "height": 2.0,
+        "totalCount": 1,
+        "exteriorCountFirstModel": 1,
+        "scope": "exterior_entrance"
+      },
+      "D2": {
+        "width": 0.8,
+        "height": 2.0,
+        "totalCount": 3,
+        "exteriorCountFirstModel": 0,
+        "scope": "internal"
+      },
+      "D3": {
+        "width": 0.7,
+        "height": 2.0,
+        "totalCount": 1,
+        "exteriorCountFirstModel": 0,
+        "scope": "internal"
+      },
+      "D4": {
+        "width": 0.8,
+        "height": 2.0,
+        "totalCount": 2,
+        "exteriorCountFirstModel": 1,
+        "scope": "one_exterior_kitchen_service_zone_one_internal_kitchen_dining"
+      }
+    }
+  },
+  "openingPlacementRules": {
+    "temporaryForFirstExteriorModel": true,
+    "appliesWhenDirectMeasuredOffsetUnavailable": true,
+    "singleOpeningCenterFraction": 0.5,
+    "twoWindowsSameBayCenterFractions": [
+      0.25,
+      0.75
+    ],
+    "symmetricalAroundBayCenter": true,
+    "mayBeReplacedBy": [
+      "actual_measurements",
+      "additional_reliable_dimensioning"
+    ]
+  },
+  "openingDisplay": {
+    "windows": "closed",
+    "exteriorDoors": "closed",
+    "excludedFromFirstModelScope": [
+      "hinges",
+      "swingDirections",
+      "hardware",
+      "openingStates",
+      "animation"
+    ]
+  },
+  "exteriorOpenings": [
+    {
+      "id": "E1_W1_1_2_living",
+      "type": "W1",
+      "kind": "window",
+      "facade": "1",
+      "bay": "1-2",
+      "adjacentRoom": "woonkamer",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E1_D1_2_3_entrance",
+      "type": "D1",
+      "kind": "door",
+      "facade": "1",
+      "bay": "2-3",
+      "adjacentRoom": "entree",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E1_W1_3_4_bedroom_1",
+      "type": "W1",
+      "kind": "window",
+      "facade": "1",
+      "bay": "3-4",
+      "adjacentRoom": "slaapkamer_1",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E2_D4_A_B_kitchen_service",
+      "type": "D4",
+      "kind": "door",
+      "facade": "2",
+      "bay": "A-B",
+      "adjacentRoom": "keuken_servicezone",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E2_W5_B_C_kitchen_west",
+      "type": "W5",
+      "kind": "window",
+      "facade": "2",
+      "bay": "B-C",
+      "adjacentRoom": "keuken",
+      "centerFractionWithinBay": 0.25,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E2_W5_B_C_kitchen_east",
+      "type": "W5",
+      "kind": "window",
+      "facade": "2",
+      "bay": "B-C",
+      "adjacentRoom": "keuken",
+      "centerFractionWithinBay": 0.75,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E2_W2_C_D_dining",
+      "type": "W2",
+      "kind": "window",
+      "facade": "2",
+      "bay": "C-D",
+      "adjacentRoom": "eetruimte",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E2_W2_D_E_living",
+      "type": "W2",
+      "kind": "window",
+      "facade": "2",
+      "bay": "D-E",
+      "adjacentRoom": "woonkamer",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E3_W6_1_2_kitchen",
+      "type": "W6",
+      "kind": "window",
+      "facade": "3",
+      "bay": "1-2",
+      "adjacentRoom": "keuken",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E3_W1_2_3_bedroom_3",
+      "type": "W1",
+      "kind": "window",
+      "facade": "3",
+      "bay": "2-3",
+      "adjacentRoom": "slaapkamer_3",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E3_W1_3_4_bedroom_2",
+      "type": "W1",
+      "kind": "window",
+      "facade": "3",
+      "bay": "3-4",
+      "adjacentRoom": "slaapkamer_2",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E4_W3_B_C_bedroom_2_west",
+      "type": "W3",
+      "kind": "window",
+      "facade": "4",
+      "bay": "B-C",
+      "adjacentRoom": "slaapkamer_2",
+      "centerFractionWithinBay": 0.25,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E4_W3_B_C_bedroom_2_east",
+      "type": "W3",
+      "kind": "window",
+      "facade": "4",
+      "bay": "B-C",
+      "adjacentRoom": "slaapkamer_2",
+      "centerFractionWithinBay": 0.75,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E4_W7_C_D_bathroom",
+      "type": "W7",
+      "kind": "window",
+      "facade": "4",
+      "bay": "C-D",
+      "adjacentRoom": "badkamer",
+      "centerFractionWithinBay": 0.5,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E4_W3_D_E_bedroom_1_west",
+      "type": "W3",
+      "kind": "window",
+      "facade": "4",
+      "bay": "D-E",
+      "adjacentRoom": "slaapkamer_1",
+      "centerFractionWithinBay": 0.25,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    },
+    {
+      "id": "E4_W3_D_E_bedroom_1_east",
+      "type": "W3",
+      "kind": "window",
+      "facade": "4",
+      "bay": "D-E",
+      "adjacentRoom": "slaapkamer_1",
+      "centerFractionWithinBay": 0.75,
+      "displayState": "closed",
+      "sourceStatus": "confirmed_external_opening"
+    }
+  ],
+  "presentation": {
+    "style": "simple_neutral",
+    "materialIntent": "neutral_placeholder_materials",
+    "photorealism": "out_of_scope_for_first_model"
+  },
+  "unresolved": [
+    {
+      "id": "wall_thicknesses",
+      "description": "Wall thicknesses are not yet supplied.",
+      "value": null
+    },
+    {
+      "id": "floor_thicknesses",
+      "description": "Floor thicknesses are not yet supplied.",
+      "value": null
+    },
+    {
+      "id": "roof_thicknesses",
+      "description": "Roof thicknesses are not yet supplied.",
+      "value": null
+    },
+    {
+      "id": "exact_composite_roof_topology",
+      "description": "Exact composite roof topology, ridge directions, roof planes, gutters, downpipes and roof details are not yet supplied.",
+      "value": null
+    },
+    {
+      "id": "platforms",
+      "description": "Exact platform geometry and dimensions are not yet supplied.",
+      "value": null
+    },
+    {
+      "id": "stair_detail_dimensions",
+      "description": "Exact exterior stair dimensions, walking dimensions, clear heights and stair widths are not yet supplied.",
+      "value": null
+    },
+    {
+      "id": "facade_opening_offsets_verification",
+      "description": "Temporary opening center positions may later be replaced by actual measurements or additional reliable dimensioning.",
+      "value": null
+    }
+  ]
+}
