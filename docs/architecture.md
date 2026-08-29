@@ -11,6 +11,14 @@ Ontwerpeisen → configuratie → Blender Python-generator → `.blend` → vali
 3. Reproduceerbare Python-generators.
 4. Gegenereerde `.blend` en exports.
 
+## Runtime
+
+- Doelruntime: Blender 5.2.1 LTS.
+- Ingebouwde scriptruntime: Blender-Python 3.13.13.
+- Lokale Blender-paden zijn machineafhankelijk en worden niet als projectconfiguratie gecommit.
+- Toekomstige commandoscripts lezen de omgevingsvariabele `BLENDER_EXECUTABLE`.
+- Scripts kiezen niet automatisch een willekeurige Blender-versie uit `PATH`.
+
 ## Beoogde mappen
 
 ```text

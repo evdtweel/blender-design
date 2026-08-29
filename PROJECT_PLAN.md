@@ -50,9 +50,9 @@ Acceptatie:
 
 ### Fase 1 — Lokale omgeving en Git/GitHub
 
-- [ ] Windows-, IntelliJ-, Git-, Python- en Blender-versies inventariseren.
-- [ ] Ondersteunde Blender LTS-versie kiezen en vastleggen.
-- [ ] Pad naar `blender.exe` detecteren zonder machinepad te committen.
+- [x] Windows-, IntelliJ-, Git-, Python- en Blender-versies inventariseren.
+- [x] Ondersteunde Blender LTS-versie kiezen en vastleggen.
+- [x] Pad naar `blender.exe` detecteren zonder machinepad te committen.
 - [ ] Run-configuratie of PowerShell-wrapper ontwerpen.
 - [ ] `.gitignore` en `.gitattributes` opstellen.
 - [ ] Beslissen welke binaire bestanden Git LFS gebruiken.

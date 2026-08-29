@@ -12,6 +12,9 @@ Algemene status: Gereed voor inventarisatie
 - Resultaatrapportage actief.
 - Repository-hygiëne ingericht.
 - Eerste gecontroleerde commit gemaakt: `a75ac31`.
+- Lokale omgeving read-only geïnventariseerd.
+- Blender 5.2.1 LTS geverifieerd als beoogde projectbasis.
+- Blender-Python 3.13.13 geverifieerd.
 - IntelliJ-project `D:\repo\blender_design` aangemaakt.
 - Git-repository zichtbaar in IntelliJ.
 - Codex werkt met directory `D:\repo\blender_design` en `workspace-write`.
@@ -24,11 +27,16 @@ Algemene status: Gereed voor inventarisatie
 
 ## Actief
 
-- Fase 1 voorbereiden met read-only inventarisatie.
+- Git-regelafhandeling en GitHub-remote gecontroleerd vaststellen.
 
 ## Geblokkeerd
 
 - Geen blokkades.
+
+## Aandachtspunten
+
+- `PATH` is bewust nog niet aangepast voor Blender.
+- Oudere Blender-installaties 4.1.1 en 4.3.0 zijn aanwezig, maar blokkeren niet omdat toekomstige scripts `BLENDER_EXECUTABLE` gebruiken.
 
 ## Besluiten nodig
 
@@ -36,7 +44,7 @@ Algemene status: Gereed voor inventarisatie
 
 ## Eerstvolgende Codex-opdracht
 
-Voer een read-only inventarisatie van Windows, IntelliJ, Git, Python, Blender en GitHub-remote uit.
+Stel Git-regelafhandeling en GitHub-remote gecontroleerd vast.
 
 ## Bewijs voor afronding
 
