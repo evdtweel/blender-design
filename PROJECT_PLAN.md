@@ -24,12 +24,14 @@ Dit prototype is geen constructieberekening, vergunningstekening of gecertificee
 | Mijlpaal | Resultaat | Status |
 |---|---|---|
 | M0 | Repository bestuurbaar | Voltooid |
-| M1 | IntelliJ → Blender automatisering werkt | Voltooid |
+| M1 | IntelliJ → Blender automatisering werkt | In uitvoering |
 | M2 | Eisen en maatvoering goedgekeurd | Niet gestart |
 | M3 | Maatvast casco gegenereerd | Niet gestart |
 | M4 | Compleet architectonisch prototype | Niet gestart |
 | M5 | Kwaliteitscontroles slagen | Niet gestart |
 | M6 | Interactief model gepubliceerd | Niet gestart |
+
+M1 wordt pas voltooid na een succesvolle gevalideerde headless end-to-end-uitvoering.
 
 ## 4. Detailplan
 
@@ -67,6 +69,8 @@ Acceptatie:
 
 ### Fase 2 — Verticale Blender-proefopstelling
 
+- [x] Ontwerpanalyse voor Fase 2 uitvoeren.
+- [x] DEC-005 voor commandoketen, proefwoning en outputbeleid goedkeuren.
 - [ ] Minimale projectmappen aanmaken.
 - [ ] Configuratie voor een kleine proefwoning maken.
 - [ ] Script maken dat scène, units en collections initialiseert.

@@ -8,6 +8,10 @@ Algemene status: Gereed voor ontwerp
 
 - Fase 0 — Projectbesturing en uitgangspunten afgerond.
 - Fase 1 — Lokale omgeving en Git/GitHub afgerond.
+- Fase 2-ontwerpanalyse uitgevoerd.
+- DEC-005 goedgekeurd voor commandoketen, proefwoning en outputbeleid.
+- M1 blijft in uitvoering tot een succesvolle gevalideerde headless end-to-end-uitvoering.
+- Gegenereerde uitvoer onder `/out/` wordt genegeerd.
 - Projectbesturing ingericht.
 - `AGENTS.md` actief.
 - Resultaatrapportage actief.
@@ -33,7 +37,7 @@ Algemene status: Gereed voor ontwerp
 
 ## Actief
 
-- Fase 2 voorbereiden met een read-only analyse van eisen, architectuur en commandoketen.
+- Fase 2 voorbereiden voor implementatie van de verticale Blender-proefopstelling.
 
 ## Geblokkeerd
 
@@ -52,7 +56,7 @@ Algemene status: Gereed voor ontwerp
 
 ## Eerstvolgende Codex-opdracht
 
-Voer een read-only analyse uit van de eisen, architectuur en gewenste IntelliJ–Blender-commandoketen.
+Maak de minimale Fase 2-projectstructuur, proefconfiguratie en commandowrapper volgens DEC-005, zonder Blender-uitvoer te genereren.
 
 ## Bewijs voor afronding
 

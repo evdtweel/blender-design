@@ -19,6 +19,20 @@ Ontwerpeisen → configuratie → Blender Python-generator → `.blend` → vali
 - Toekomstige commandoscripts lezen de omgevingsvariabele `BLENDER_EXECUTABLE`.
 - Scripts kiezen niet automatisch een willekeurige Blender-versie uit `PATH`.
 
+## Fase 2-commandoketen
+
+```text
+IntelliJ-terminal
+→ scripts/build_phase2.ps1
+→ BLENDER_EXECUTABLE
+→ Blender 5.2.1 headless
+→ scripts/blender/build_phase2_probe.py
+→ config/phase2_probe.json
+→ out/phase2/
+```
+
+De Fase 2-keten gebruikt een gecommit PowerShell-entrypoint en een gecommit Blender-Python-script. Lokale IntelliJ-runconfiguraties mogen dit script later aanroepen, maar zijn niet de technische projectbron. Gegenereerde Fase 2-uitvoer blijft voorlopig lokaal onder `out/phase2/`.
+
 ## Beoogde mappen
 
 ```text

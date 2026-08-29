@@ -55,3 +55,16 @@ Gebruik per belangrijk besluit:
 - Alternatieven: De lokale branch `master` behouden, SSH als remoteprotocol gebruiken, of de remote pas later koppelen.
 - Gevolgen: Gewone pushes gaan naar `origin/main`. Pushes gebruiken geen force, tenzij de projecteigenaar daarvoor later expliciet toestemming geeft.
 - Goedgekeurd door: Projecteigenaar op 29 augustus 2026.
+
+## DEC-005 — Fase 2-commandoketen, proefwoning en outputbeleid
+
+- Datum: 29 augustus 2026
+- Status: Goedgekeurd
+- Aanleiding: De verticale Blender-proefopstelling heeft een reproduceerbare, Windows-vriendelijke commandoketen en afgebakend outputbeleid nodig voordat scripts of configuratie worden gemaakt.
+- Besluit: Gebruik `scripts/build_phase2.ps1` als primair entrypoint en `scripts/blender/build_phase2_probe.py` als Blender-script. Gebruik `config/phase2_probe.json` als configuratie. Blender wordt via `BLENDER_EXECUTABLE` gestart en moet Blender 5.2.1 LTS zijn. Blender draait headless met `--background --factory-startup`. Edward start de keten primair vanuit de IntelliJ-terminal met `.\scripts\build_phase2.ps1 -Clean`.
+- Besluit: `-Clean` mag uitsluitend `out/phase2/` leegmaken of vervangen, na strikte controle dat het doelpad binnen de repository en exact binnen de toegestane outputroot ligt. Gegenereerde uitvoer komt voorlopig uitsluitend onder `out/phase2/`, blijft voorlopig lokaal en wordt niet gecommit. Git LFS wordt nog niet ingericht. Een latere lokale IntelliJ Run Configuration mag hetzelfde gecommitte script aanroepen, maar is niet de technische projectbron.
+- Besluit: De tijdelijke proefwoning is uitsluitend technische testdata en geen definitief huisontwerp. Goedgekeurde tijdelijke Fase 2-testdata: buitenmaat 8,00 × 6,00 meter; wandhoogte 2,80 meter; wanddikte 0,20 meter; buitendeur 0,90 × 2,10 meter; ramen 1,20 × 1,20 meter; borstwering ramen 0,90 meter; één eenvoudige binnenwand; symmetrisch zadeldak; dakhelling 30 graden; dakoverstek 0,30 meter; vier controleaanzichten voor, achter, links en rechts.
+- Besluit: Plaatsing en aantallen van deur en ramen moeten in de eerste configuratie technisch eenvoudig en valide zijn en vormen geen definitief architectonisch ontwerp.
+- Alternatieven: Directe Blender-aanroep vanuit IntelliJ, een externe Python-wrapper buiten Blender, output in de README-hoofdmappen schrijven, of gegenereerde uitvoer direct committen.
+- Gevolgen: De volgende implementatiestap mag de minimale projectstructuur, wrapper, Blender-script en proefconfiguratie maken volgens dit besluit. Output onder `out/phase2/` moet lokaal blijven totdat de projecteigenaar anders besluit.
+- Goedgekeurd door: Projecteigenaar op 29 augustus 2026.

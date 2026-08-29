@@ -15,6 +15,8 @@ Alle betekenisvolle projectwijzigingen worden hier chronologisch vastgelegd.
 - Goedgekeurd besluit om Blender 5.2.1 LTS met Blender-Python 3.13.13 als projectbasis te gebruiken.
 - Repositorybreed regelafhandelingsbeleid via `.gitattributes`.
 - GitHub-koppeling met private repository `evdtweel/blender-design`.
+- Goedgekeurd Fase 2-besluit voor commandoketen, technische proefwoning en lokaal outputbeleid.
+- Ignore-regel voor gegenereerde uitvoer onder `/out/`.
 
 ### Gewijzigd
 
@@ -23,3 +25,5 @@ Alle betekenisvolle projectwijzigingen worden hier chronologisch vastgelegd.
 - Fase 1-voortgang bijgewerkt op basis van de lokale Blender-verificatie.
 - Fase 1-status bijgewerkt voor de afzonderlijke renormalisatiecheck.
 - Fase 1 afgerond na branchhernoeming van `master` naar `main`, upstream `origin/main`, eerste push en renormalisatiecheck zonder bestandswijzigingen.
+- Fase 2-status voorbereid voor implementatie volgens DEC-005.
+- M1 teruggezet naar in uitvoering totdat een gevalideerde headless end-to-end-uitvoering slaagt.
