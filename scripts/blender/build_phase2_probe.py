@@ -307,7 +307,7 @@ def resolve_output_paths(out_dir, output_config):
         view: resolve_child_path(out_root, output_config["renders"][view], f"output.renders.{view}")
         for view in ("front", "back", "left", "right")
     }
-    validation_path = resolve_child_path(out_root, "validation.json", "validation report")
+    validation_path = resolve_child_path(out_root, output_config["validationReport"], "output.validationReport")
     return out_root, blend_path, glb_path, render_paths, validation_path
 
 
