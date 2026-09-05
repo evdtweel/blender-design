@@ -19,3 +19,7 @@ Parametrisch Blender-project voor een maatvast 3D-prototype van een huis, bestuu
 - Interactieve viewer: `viewer/`
 
 Het Blender-bestand is niet de enige bron van waarheid. De configuratie en Python-scripts moeten het model reproduceerbaar kunnen genereren.
+
+## Wiki
+
+De beginnersintro staat in [docs/wiki-intro-eerste-run.md](docs/wiki-intro-eerste-run.md). Deze pagina is bedoeld voor beginners die het huis willen openen of opnieuw genereren.

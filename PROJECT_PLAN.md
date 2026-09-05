@@ -2,7 +2,7 @@
 
 ## 1. Doel en definitie van gereed
 
-Een maatvast architectonisch prototype dat vanuit configuratie en Python reproduceerbaar in Blender wordt opgebouwd, technisch wordt gevalideerd, visueel wordt gecontroleerd en als `.glb` in een browser kan worden bekeken.
+Een maatvast architectonisch prototype dat vanuit configuratie en Python reproduceerbaar in Blender wordt opgebouwd, technisch wordt gevalideerd, visueel wordt gecontroleerd en als `.glb` in een browser kan worden bekeken. Een projectwiki helpt beginnende gebruikers het huis veilig te bekijken en maakt het project overdraagbaar.
 
 Dit prototype is geen constructieberekening, vergunningstekening of gecertificeerd BIM-model. Bouwkundige en constructieve goedkeuring blijft mensenwerk.
 
@@ -100,6 +100,7 @@ Acceptatie:
 - [ ] Referentiebeelden en tekeningen registreren met bron/status.
 - [ ] Onzekerheden en expliciete aannames vastleggen.
 - [x] Configuratieschema valideren.
+- [x] Beginnerspagina voor de projectwiki opstellen; alleen gereed wanneer `docs/wiki-intro-eerste-run.md` bestaat en Blender 5.2.1, openen, navigeren en veilig afsluiten behandelt.
 
 Acceptatie:
 
@@ -196,6 +197,9 @@ Acceptatie:
 - [ ] Viewer en model publiceren.
 - [ ] Publieke URL testen.
 - [ ] Installatie-, bouw-, export- en herstelhandleiding afronden.
+- [ ] Projectwiki afronden en vanuit `README.md` vindbaar maken.
+- [ ] Testen dat een beginner het huis met alleen de Wiki kan bekijken.
+- [ ] Beslissen of de repositorydocumentatie ook naar GitHub Wiki wordt gepubliceerd.
 - [ ] Versie taggen en release notes maken.
 - [ ] Back-up- en overdrachtscontrole uitvoeren.
 - [ ] Vervolgwensen in backlog plaatsen.
@@ -204,6 +208,7 @@ Acceptatie:
 
 - [ ] Gepubliceerde versie is bereikbaar en reproduceerbaar.
 - [ ] Repository kan door een andere ontwikkelaar worden gebruikt.
+- [ ] Wiki bevat minimaal startinstructies, versie-informatie, probleemoplossing en verwijzingen naar projectdocumentatie.
 - [ ] Projecteigenaar accepteert de eindoplevering.
 
 ## 5. Voortgangsregels
@@ -236,3 +241,12 @@ Acceptatie:
 - Openbaar of privé GitHub-project.
 - Wel of geen Git LFS voor `.blend` en grote textures.
 - Welke tekeningen, maten en referentiebeelden beschikbaar zijn.
+
+## 8. Wiki en gebruikersdocumentatie
+
+- Repositorydocumentatie is de bron van waarheid.
+- Doelgroepen zijn beginners, reviewers/projecteigenaar en ontwikkelaars.
+- ChatGPT stelt structuur en tekst voor.
+- Codex verwerkt goedgekeurde wijzigingen.
+- De projecteigenaar keurt inhoud en publicatie goed.
+- Wiki-instructies worden bij iedere mijlpaal tegen de echte uitvoer gecontroleerd.

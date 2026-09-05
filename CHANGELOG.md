@@ -18,6 +18,7 @@ Alle betekenisvolle projectwijzigingen worden hier chronologisch vastgelegd.
 - Goedgekeurd Fase 2-besluit voor commandoketen, technische proefwoning en lokaal outputbeleid.
 - Ignore-regel voor gegenereerde uitvoer onder `/out/`.
 - Werkende Blender 5.2.1-build voor Fase 2 met `out/phase2/blender/house.blend`, `out/phase2/exports/house.glb`, vier controlerenders, `out/phase2/reports/validation.json` met status `passed` en `out/phase2/logs/build.log`.
+- Beginnersintro en Wiki als projectonderdeel toegevoegd.
 
 ### Gewijzigd
 
